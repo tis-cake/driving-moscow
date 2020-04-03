@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>Автошкола Москва</title>
+
+  <link rel="stylesheet" href="fonts/stylesheet.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="/fav.ico" /> -->
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script> -->
+</head>
+
+<div id="panel"></div>
+
+<body>
+  <header>
+    <div class="header-desktop desktop">
+      <div class="header-top">
+        <div class="container header-top-container">
+          <a href="/" class="header-logo">
+            <p class="header-logo-name">Автошкола Москва</p>
+          </a>
+          <nav class="header-nav">
+            <ul class="header-nav-list">
+              <li class="header-nav-item driving-branches active">
+                <a href="javascript:void(0);" class="header-nav-item-link">Автошколы</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="#" class="header-nav-item-link">Категории</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="/ceny/" class="header-nav-item-link">Цены</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="/onlajn-obuchenie/" class="header-nav-item-link">Обучение-онлайн</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="/otzyvy/" class="header-nav-item-link">Отзывы</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="/akcii/" class="header-nav-item-link">Акции</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="/uskorennyj-kurs/" class="header-nav-item-link">Ускоренный курс</a>
+              </li>
+              <li class="header-nav-item">
+                <a href="/o-nas/" class="header-nav-item-link">О нас</a>
+                <ul class="categories-submenu">
+                  <li class="categories-item-wrap">
+                    <a class="categories-item" href="/novosti/">Новости</a>
+                  </li>
+                  <li class="categories-item-wrap">
+                    <a class="categories-item" href="/nagrady/">Награды</a>
+                  </li>
+                  <li class="categories-item-wrap">
+                    <a class="categories-item" href="/vakansii/">Вакансии</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-nav-item">
+                <a href="/kontakty/" class="header-nav-item-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="hidden-menu">
+        </div>
+      </div>
+      <div class="header-lower">
+        <div class="container header-lower-container">
+          <div class="header-lower-left">
+            <p class="header-lower-left-inside">Лицензия 77Л01 №0010539</p>
+          </div>
+          <ul class="header-lower-right">
+            <li class="header-lower-right-item">
+              <a href="#" class="header-lower-right-tel">+7 (495) 532-55-07</a>
+            </li>
+            <li class="header-lower-right-item header-lower-right-time">10:00 - 20:00 пн-пт</li>
+            <li class="header-lower-right-item">
+              <a href="mailto:gl@magic-drive.ru" class="header-lower-right-mail">gl@magic-drive.ru</a>
+            </li>
+            <li class="header-lower-right-item submit-application">
+              <a href="#" class="header-lower-right-submit">Оставить заявку</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="header-mobile mobile">
+      <div class="header-mobile-top">
+        <a href="javascript:void(0);" id="hamburger" class="burger">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </a>
+        <a href="/" class="mobile-logo" title="">Автошкола</a>
+        <div class="mobile-call">
+          <a href="#" class="mobile-call-link"></a>
+        </div>
+      </div>
+      <div class="header-mobile-middle">
+        <ul class="header-mobile-middle-wrapper">
+          <li>
+            <a href="/kategorii/" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_1"></i> Категории</a>
+          </li>
+          <li>
+            <a href="/ceny/" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_2"></i>Цены</a>
+          </li>
+          <li>
+            <a href="/uskorennyj-kurs/" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_3"></i>Ускоренный курс</a>
+          </li>
+          <li>
+            <a href="#" class="header-mobile-middle-link" title=""><i class="mobile-middle-icon mobile-middle-icon_4"></i>Вебинары</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-mobile-bottom">
+        <a href="#" class="open-address-form header-mobile-bottom-link" title="">Адреса проведения занятий <i class="open-form-arrow"></i></a>
+      </div>
+      <div class="mobile-hidden-blocks mobile">
+        <div class="mobile-call-block">
+          <a href="javascript:void(0);" class="call-close-btn close-btn" title=""></a>
+          <p class="mobile-call-title">Свяжитесь с нами</p>
+          <ul class="mobile-call-list">
+            <li class="mobile-call-item">
+              <a href="#" class="mobile-call-item-link" title=""><i class="mobile-call-item-icon mobile-call-item-icon_phone"></i>+7 495 532 55 07</a>
+            </li>
+            <li class="mobile-call-item">
+              <a href="#" class="mobile-call-item-link" title=""><i class="mobile-call-item-icon mobile-call-item-icon_telegram"></i>Telegram</a>
+            </li>
+            <li class="mobile-call-item">
+              <a href="#" class="mobile-call-item-link" title=""><i class="mobile-call-item-icon mobile-call-item-icon_viber"></i>Viber</a>
+            </li>
+            <li class="mobile-call-item">
+              <a href="#" class="mobile-call-item-link" title=""><i class="mobile-call-item-icon mobile-call-item-icon_whatsApp"></i>WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu-block">
+          <a href="javascript:void(0);" class="menu-close-btn close-btn" title=""></a>
+          <ul class="mobile-header-nav-list">
+            <li class="mobile-header-nav-item mobile-driving-branches active">
+              <a href="javascript:void(0);" class="mobile-header-nav-item-link">Автошколы</a>
+            </li>
+            <li class="mobile-header-nav-item mobile-category">
+              <a href="/kategorii/" class="mobile-header-nav-item-link">Категории</a>
+            </li>
+            <li class="mobile-mobile-header-nav-item">
+              <a href="/ceny/" class="mobile-header-nav-item-link">Цены</a>
+            </li>
+            <li class="mobile-header-nav-item">
+              <a href="/onlajn-obuchenie/" class="mobile-header-nav-item-link">Обучение-онлайн</a>
+            </li>
+            <li class="mobile-header-nav-item">
+              <a href="/otzyvy/" class="mobile-header-nav-item-link">Отзывы</a>
+            </li>
+            <li class="mobile-header-nav-item">
+              <a href="javascript:void(0);" class="mobile-header-nav-item-link">Акции</a>
+            </li>
+            <li class="mobile-header-nav-item">
+              <a href="javascript:void(0);" class="mobile-header-nav-item-link">Ускоренный курс</a>
+            </li>
+            <li class="mobile-header-nav-item">
+              <a href="/o-nas/" class="mobile-header-nav-item-link">О нас</a>
+            </li>
+            <li class="mobile-header-nav-item">
+              <a href="/kontakty/" class="mobile-header-nav-item-link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-category-block">
+          <ul class="categories-submenu">
+            <li class="category-close-btn close-btn mobile"></li>
+            <li class="categories-items categories-items-strong-b">
+              <p><a class="categories-item-strong" href="#">B - легковые авто</a></p>
+              <p><a href="#" class="categories-item">В1 - квадрациклы</a></p>
+              <p><a href="#" class="categories-item">BE - с прицепом</a></p>
+            </li>
+            <li class="categories-items categories-items-strong-a">
+              <p><a class="categories-item-strong" href="#">A - мотоциклы</a></p>
+              <p><a href="#" class="categories-item">A1 - легкие мотоциклы</a></p>
+              <p><a href="#" class="categories-item">M - мопеды</a></p>
+            </li>
+            <li class="categories-items categories-items-strong-c">
+              <p><a class="categories-item-strong" href="#">C - грузовые авто</a></p>
+              <p><a href="#" class="categories-item">С1 - с прицепом</a></p>
+            </li>
+            <li class="categories-items categories-items-strong-d">
+              <p><a class="categories-item-strong" href="#">D - автобусы</a></p>
+              <p><a href="#" class="categories-item">D1 - малые автобусы</a></p>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-address-block">
+          <a href="javascript:void(0);" class="address-close-btn close-btn" title=""></a>
+          <p class="mobile-address-block-title">Адреса проведения занятий</p>
+          <p class="mobile-address-block-caption">Выберите категорию и удобную станцию метро</p>
+          <div class="address-form">
+            <div class="address-col-small filter-item filter-item filter-item_address">
+              <input type="hidden" name="" value="">
+              <a class="filter-handler filter-handler_address" href="javascript:void(0);" data-id="">Категория B</a>
+              <div class="filter-dd filter-dd_address">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0);" data-id="">Категория A</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" data-id="">Категория B</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" data-id="">Категория C</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" data-id="">Категория D</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="address-col-small address-col-small-search">
+              <input type="search" name="" value="" placeholder="Поиск станции.">
+            </div>
+            <a href="javascript:void" class="show-map-search">Найти</a>
+            <a href="javascript:void(0);" class="show-map-btn"><i class="location-icon"></i>Показать на карте</a>
+          </div>
+          <div class="address-cards">
+            <div class="address-card">
+              <p class="address-card-text-medium">Автошкола</p>
+              <p class="address-card-text-medium"><i class="metro-icon-shadow metro-green"></i>Октябрьское поле</p>
+              <p class="address-card-text-small">ул. Новая Басманная 32, стр. 4, эт. 2, оф. 214</p>
+              <p class="address-card-text-small">10:00-20:00 пн-пт без перерыва</p>
+              <p class="address-card-text-small">+7 (495) 532-55-07</p>
+              <a href="#" class="address-card-btn">Подробнее <i class="arrow-right-icon"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="reviews">
+      <div class="container">
+        <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs-item">Главная</a>
+            <a href="/filialy/" class="breadcrumbs-item">Филиалы</a>
+            <a href="#" class="breadcrumbs-item breadcrumbs-item-current">Отзывы</a>
+        </div>
+        <div class="section-heading">
+            <p class="heading-title">Отзывы</p>
+            <div class="heading-caption">
+                <p>Отзывы наших учеников об автошколе, обучении,</p>
+                <p>инструкторах и образрвательных классах</p>
+            </div>
+        </div>         
+        <noindex></noindex>
+        <ul class="reviews-tabs">
+          <li class="reviews-tab">
+              <a href="#reviews-tab-1" class="revews-tab-link" title="">Все отзывы</a>
+          </li>
+          <li class="reviews-tab">
+              <a href="#reviews-tab-2" class="revews-tab-link" title="">Автошкола</a>
+          </li>
+          <li class="reviews-tab">
+              <a href="#reviews-tab-3" class="revews-tab-link active" title="">Мотошкола</a>
+          </li>
+        </ul>
+
+        <div class="reviews-tabs-container">
+          <div class="reviews-tabs-blocks" id="reviews-tab-1" style="display: none;">
+            <div class="reviews-blocks-wrapper">
+
+              <div class="reviews-tabs-block">
+                  <div class="reviews-user-avatar">
+                    <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="И. Степанов.">
+                  </div>
+                  <p class="reviews-date">30.03.2020</p>
+                  <p class="reviews-user-name">И. Степанов.</p>
+                  <div class="reviews-text">
+                      <p>Gl-stimul – автошкола с высоким качеством обучения, теорию здесь преподают очень качественно и интересно. Информация доносится очень ясно, легко запоминается, поэтому нет необходимости зубрить. Инструктором был Николай Востров – приятный, вежливый и воспитанный человек. Машины находятся в отличном состоянии, учиться в них вождению – одно удовольствие. Благодарю за полученные с первого раза права и всем рекомендую.</p>
+                  </div>
+              </div>
+              <div class="reviews-tabs-block">
+                  <div class="reviews-user-avatar">
+                          <img src="/upload/iblock/448/44885947dcb42b5bc0f61527a3594e64.png" alt="Андрей Андреевич">
+                  </div>
+                  <p class="reviews-date">30.03.2020</p>
+                  <p class="reviews-user-name">Андрей Андреевич</p>
+                  <div class="reviews-text">
+                      <p></p>
+                      <p></p>
+                  </div>
+              </div>
+              <div class="reviews-tabs-block">
+                  <div class="reviews-user-avatar">
+                          <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Максим Ф.">
+                  </div>
+                  <p class="reviews-date">29.03.2020</p>
+                  <p class="reviews-user-name">Максим Ф.</p>
+                  <div class="reviews-text">
+                      <p>Очень приличная автошкола, рекомендую всем, кто ищет место, где пройти обучение. Выучился и сдал экзамены без неприятных неожиданностей. Договор составлен грамотно, нет подводных камней в виде внезапных дополнительных расходов, которые заранее не были прописаны. Для подписания менеджер сам приехал ко мне в офис, предложил поэтапную оплату. В целом, все понравилось, инструктора грамотные, авто в хорошем состоянии. Рекомендую!</p>
+                  </div>
+              </div>
+              <div class="reviews-tabs-block">
+                  <div class="reviews-user-avatar">
+                          <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                  </div>
+                  <p class="reviews-date">28.03.2020</p>
+                  <p class="reviews-user-name">Андрей Михалков</p>
+                  <div class="reviews-text">
+                      <p>Всем привет! Проходил курсы в автошколе Gl-stimul на Профсоюзной, остался доволен организацией обучения и ценами. Спасибо опытным инструкторам и преподавателям!</p>
+                  </div>
+              </div>  
+            </div>
+              <!-- <form class="load-otzyv">
+                <a class="more-content-btn" href="javascript:void(0);">
+                  Показать ещё
+                  <input type="hidden" name="COUNT" value="4">
+                  <i class="bottom-velvet-icon"></i>
+                </a>
+              </form> -->
+          </div>
+
+          <div class="reviews-tabs-blocks" id="reviews-tab-2" style="display: none;">
+
+            <div class="reviews-blocks-wrapper">
+                
+              <div class="reviews-tabs-block">
+                  <div class="reviews-user-avatar">
+                          <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                  </div>
+                  <p class="reviews-date">30.03.2020</p>
+                  <p class="reviews-user-name">И. Степанов.</p>
+                  <div class="reviews-text">
+                      <p>Gl-stimul – автошкола с высоким качеством обучения, теорию здесь преподают очень качественно и интересно. Информация доносится очень ясно, легко запоминается, поэтому нет необходимости зубрить. Инструктором был Николай Востров – приятный, вежливый и воспитанный человек. Машины находятся в отличном состоянии, учиться в них вождению – одно удовольствие. Благодарю за полученные с первого раза права и всем рекомендую.</p>
+                  </div>
+              </div>
+              
+              <div class="reviews-tabs-block">
+                <div class="reviews-user-avatar">
+                        <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                </div>
+                <p class="reviews-date">29.03.2020</p>
+                <p class="reviews-user-name">Максим Ф.</p>
+                <div class="reviews-text">
+                    <p>Очень приличная автошкола, рекомендую всем, кто ищет место, где пройти обучение. Выучился и сдал экзамены без неприятных неожиданностей. Договор составлен грамотно, нет подводных камней в виде внезапных дополнительных расходов, которые заранее не были прописаны. Для подписания менеджер сам приехал ко мне в офис, предложил поэтапную оплату. В целом, все понравилось, инструктора грамотные, авто в хорошем состоянии. Рекомендую!</p>
+                </div>
+              </div>
+
+              <div class="reviews-tabs-block">
+                <div class="reviews-user-avatar">
+                        <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                </div>
+                <p class="reviews-date">28.03.2020</p>
+                <p class="reviews-user-name">Андрей Михалков</p>
+                <div class="reviews-text">
+                    <p>Всем привет! Проходил курсы в автошколе Gl-stimul на Профсоюзной, остался доволен организацией обучения и ценами. Спасибо опытным инструкторам и преподавателям!</p>
+                </div>
+              </div>
+
+              <div class="reviews-tabs-block">
+                <div class="reviews-user-avatar">
+                        <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                </div>
+                <p class="reviews-date">27.03.2020</p>
+                <p class="reviews-user-name">Людмила</p>
+                <div class="reviews-text">
+                    <p>Отучилась в этой автошколе, с первого раза сдала на права и теперь уверенно вожу машину (хотя раньше казалось, что дорога – это не мое). Преподаватель Мария рассказывала сухие правила так, что они отлично запоминались, а ее обаяние и чувство юмора делали лекции интересными и увлекательными. Инструктором по вождению был Сергей, отличный водитель и терпеливый учитель, который вселял уверенность и передавал свой личный бесценный опыт вождения. Если вы все еще сомневаетесь в выборе автошколы, не раздумывая подписывайте договор с Gl-stimul – здесь вас обязательно научат всему, что должен знать водитель.</p>
+                </div>
+              </div> 
+            </div>
+
+            <!-- <form class="load-otzyv">
+              <a class="more-content-btn" href="javascript:void(0);">
+                Показать ещё
+                <input type="hidden" name="COUNT" value="4">
+                <input type="hidden" name="ID" value="38">
+                <i class="bottom-velvet-icon"></i>
+              </a>
+            </form> -->
+          </div>
+
+          <div class="reviews-tabs-blocks" id="reviews-tab-3" style="display: block;">
+
+            <div class="reviews-blocks-wrapper">
+                
+              <div class="reviews-tabs-block">
+                  <div class="reviews-user-avatar">
+                          <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                  </div>
+                  <p class="reviews-date">30.03.2020</p>
+                  <p class="reviews-user-name">Андрей Андреевич</p>
+                  <div class="reviews-text">
+                      <p></p>
+                      <p></p>
+                 </div>
+              </div>
+              
+              <div class="reviews-tabs-block">
+                <div class="reviews-user-avatar">
+                        <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                </div>
+                <p class="reviews-date">16.03.2020</p>
+                <p class="reviews-user-name">Петр Петрович</p>
+                <div class="reviews-text">
+                    <p>Это очень классная идея и я очень рад, что я выбрал именно такой способ обучения. Вдвойне круто, что есть рассрочка – не пришлось ломать голову как сразу все оплатить. В общем – отличная автошкола, советую. Выбрал учебу через интернет в целях экономии времени – после работы сил уже ни на что не остается, а права нужны. Спустя неделю понял, что сделал абсолютно верный выбор – преподаватель доносит всё очень доступно, плюс всегда есть возможность пересмотреть занятие если что то недопонял или забыл.</p>
+                </div>
+              </div>
+
+              <div class="reviews-tabs-block">
+                <div class="reviews-user-avatar">
+                        <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                </div>
+                <p class="reviews-date">09.03.2020</p>
+                <p class="reviews-user-name">Тестовый отзыв. Пока не удалять</p>
+                <div class="reviews-text">
+                    <p>Это очень классная идея и я очень рад, что я выбрал именно такой способ обучения. Вдвойне круто, что есть рассрочка – не пришлось ломать голову как сразу все оплатить. В общем – отличная автошкола, советую. Выбрал учебу через интернет в целях экономии времени – после работы сил уже ни на что не остается, а права нужны. Спустя неделю понял, что сделал абсолютно верный выбор – преподаватель доносит всё очень доступно, плюс всегда есть возможность пересмотреть занятие если что то недопонял или забыл. </p>
+                </div>
+              </div>
+              
+              <div class="reviews-tabs-block">
+                <div class="reviews-user-avatar">
+                        <img src="/bitrix/templates/avtoshkola/img/foto.png" alt="Андрей Михалков">
+                </div>
+                <p class="reviews-date">02.03.2020</p>
+                <p class="reviews-user-name">Имя-1</p>
+                <div class="reviews-text">
+                    <p>Текст отзыва</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- <form class="load-otzyv">
+              <a class="more-content-btn" href="javascript:void(0);">
+                Показать ещё
+                <input type="hidden" name="COUNT" value="4">
+                <input type="hidden" name="ID" value="39">
+                <i class="bottom-velvet-icon"></i>
+              </a>
+            </form> -->
+          </div>
+
+          <div class="link show-more active" id="reviews-tab-1-btn">
+            <form class="load-otzyv">
+              <a class="more-content-btn" href="javascript:void(0);">
+                Показать ещё
+                <input type="hidden" name="COUNT" value="8">
+                <i class="bottom-velvet-icon"></i>
+              </a>
+            </form>
+          </div>
+
+          <div class="link show-more" id="reviews-tab-2-btn">
+            <form class="load-otzyv">
+              <a class="more-content-btn" href="javascript:void(0);">
+                Показать ещё
+                <input type="hidden" name="COUNT" value="4">
+                <input type="hidden" name="ID" value="38">
+                <i class="bottom-velvet-icon"></i>
+              </a>
+            </form>
+          </div>
+
+          <div class="link show-more" id="reviews-tab-3-btn">
+            <form class="load-otzyv">
+              <a class="more-content-btn" href="javascript:void(0);">
+                Показать ещё
+                <input type="hidden" name="COUNT" value="4">
+                <input type="hidden" name="ID" value="39">
+                <i class="bottom-velvet-icon"></i>
+              </a>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-top-container">
+        <div class="footer-top-col-1">
+          <p class="footer-large-title">С нами можно связаться</p>
+          <p class="footer-caption">По будням с 10:00 до 19:00 МСК</p>
+          <a class="footer-request-call">Заказать звонок <i class="right-velvet-icon"></i></a>
+        </div>
+        <div class="footer-top-col-2">
+          <div class="footer-top-block-top">
+            <a href="tel:8(800)5325507" class="footer-block-large">8 (800) 532 55 07</a>
+            <p class="footer-block-caption">Бесплатно по России</p>
+          </div>
+          <div class="footer-top-block-bottom">
+            <a href="mailto:gl@magic-drive.ru" class="footer-block-large">gl@magic-drive.ru</a>
+            <p class="footer-block-caption">Ответим в течении рабочего дня</p>
+          </div>
+        </div>
+        <div class="footer-top-col-3">
+          <div class="footer-top-block-top">
+            <a class="footer-block-large">+7 999 532 55 07</a>
+            <p class="footer-block-caption">Telegram, Viber, Wathsap</p>
+          </div>
+          <div class="footer-block-social">
+            <a href="#" class="footer-social-item footer-social-viber"></a>
+            <a href="#" class="footer-social-item footer-social-telegram"></a>
+            <a href="#" class="footer-social-item footer-social-whatsapp"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-middle">
+      <div class="container footer-middle-container">
+        <div class="footer-middle-col">
+          <p class="footer-middle-col-title">Автошкола</p>
+          <ul class="footer-middle-col-list">
+            <li class="footer-middle-col-item">
+              <a href="/onlajn-obuchenie/">Онлайн-обучение</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/vyezd-menedzhera/">Вызвать менеджера </a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/test-drive/">Тест-драйв</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="#">Видео</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-middle-col">
+          <p class="footer-middle-col-title">Цены</p>
+          <ul class="footer-middle-col-list">
+            <li class="footer-middle-col-item">
+              <a href="/ceny/">Наши цены</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="#">Калькулятор</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/akcii/">Акции</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-middle-col">
+          <p class="footer-middle-col-title">О нас</p>
+          <ul class="footer-middle-col-list">
+            <li class="footer-middle-col-item">
+              <a href="/raspisanie/">Расписание</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/otzyvy/">Отзывы</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/nasha-komanda/">Наша команда</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/nashi-dokumenty/">Документы</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-middle-col">
+          <p class="footer-middle-col-title">Услуги</p>
+          <ul class="footer-middle-col-list">
+            <li class="footer-middle-col-item">
+              <a href="/obuchenie-vozhdeniyu-MKPP/">Обучение вождению МКПП</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/obuchenie-vozhdeniyu-AKPP/">Обучение вождению АКПП</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/avtoshkola-dlya-zhenshchin/">Автошкола для женщин</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/uroki-vozhdeniya/">Уроки вождения</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-middle-col">
+          <p class="footer-middle-col-title">Информация</p>
+          <ul class="footer-middle-col-list">
+            <li class="footer-middle-col-item">
+              <a href="/chasto-zadavaemye-voprosy/">Часто задаваемые вопросы</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="#">Статьи</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/karta-saita/">Карта сайта</a>
+            </li>
+            <li class="footer-middle-col-item">
+              <a href="/okrug/tsao">Автошколы в ЦАО</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-lower">
+      <div class="container footer-lower-container">
+        <p class="footer-lower-strong">2005 - 2020 © Автошкола Москва</p>
+        <p class="footer-lower-text">Информация, представленная на сайте, не является публичной офертой.</p>
+        <p class="footer-lower-text"> Лицензия на осуществление образовательной деятельности серия 77Л01N:0007128, рег номер </p>
+        <p class="footer-lower-text">036323 от 03 июля 2015, лицензия на осуществление образовательной деятельности серия 77Л</p>
+        <p class="footer-lower-text">01Ne0008147 рег номер 037329 от 30 марта 2016, выданы Департаментом образования города Москвы.</p>
+      </div>
+    </div>
+  </footer>
+
+  <form class="zayavka">
+    <div class="modal-submit reset-form">
+      <a href="javascript:void(0);" class="close-btn"></a>
+      <p class="submit-title">Оставить заявку</p>
+      <p class="submit-caption">Мы свяжемся с вами в течение 1 рабочего дня</p>
+      <input type="text" name="NAME" value="" placeholder="Имя" required>
+      <input type="tel" name="PHONE" value="" placeholder="Телефон" required>
+      <input type="email" name="EMAIL" value="" placeholder="E-mail" required>
+      <input type="text" name="COMMENTS" value="" placeholder="Комментарий" required>
+      <button class="btn-submit" type="submit">Отправить <i class="right-velvet-icon"></i></button>
+    </div>
+  </form>
+
+  <form id="form_zadat-vopros">
+    <div class="modal-vopros reset-form">
+      <a href="javascript:void(0);" class="close-btn"></a>
+      <p class="submit-title">Задать вопрос</p>
+      <p class="submit-caption">Мы свяжемся с вами в течение 1 рабочего дня</p>
+      <input type="text" name="NAME" value="" placeholder="Имя" required>
+      <input type="tel" name="PHONE" value="" placeholder="Телефон" required>
+      <input type="email" name="EMAIL" value="" placeholder="E-mail" required>
+      <input type="text" name="COMMENTS" value="" placeholder="Вопрос" required>
+      <button class="btn-submit" type="submit">Отправить <i class="right-velvet-icon"></i></button>
+    </div>
+  </form>
+
+  <form id="form_obratnyj-zvonok">
+    <div class="modal-callback reset-form">
+      <a href="javascript:void(0);" class="close-btn"></a>
+      <p class="submit-title submit-title--callback">Заказать звонок</p>
+      <p class="submit-caption">Оставьте свой номер, и мы с вами свяжемся</p>
+      <input class="phone-mask" type="tel" name="PHONE" value="" placeholder="+ 7 (      )   ___-__-__" required>
+      <button class="btn-submit" type="submit">Заказать <i class="right-velvet-icon"></i></button>
+    </div>
+  </form>
+
+  <div class="message">
+    <div class="message-img-wrap">
+      <img class="message-img" src="img/yellow-check.png" alt="Ваше сообщение отправлено">
+    </div>
+    <p class="submit-title">Спасибо за заявку</p>
+    <p class="submit-caption">Ваша заявка успешно отправлена! Мы свяжемся с вами в течение 1 рабочего дня</p>
+  </div>
+
+  <div class="overlay"></div>
+  <div class="overlay-half"></div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/jquery.maskedinput.min.js" ></script>
+
+  <script src="js/swiper.min.js"></script>
+  <script src="js/wow.min.js"></script>
+
+  <script src="js/index.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
