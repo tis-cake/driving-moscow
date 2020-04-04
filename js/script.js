@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 /*оставить заявку*/
 $(document).ready(function() {
-    $('.submit-application').click(function(event) {
+    $('body').on('click','.submit-application',function () {
         event.preventDefault();
         var btn = $(this);
         $('.overlay').fadeIn(200,
@@ -46,6 +46,8 @@ $(document).ready(function() {
                 $('html').css('overflow', 'hidden');
             });
     });
+
+
     $('.close-btn, .overlay, .modal-slide-btn').click(function() {
         $('.modal-submit').removeClass('active');
         $('.overlay').fadeOut(200);
@@ -75,7 +77,7 @@ $(document).ready(function() {
 // маска для телефона
 $(document).ready(function () {
   // $(".phone-mask").mask("+ 7 ( 999 ) 999 99 - 99");
-  $(".phone-mask").mask("+ 7 (999)   999-99-99");
+  $(".phone-mask").mask("+ 7 (999)  999-99-99");
 });
 
 /*слайдер на главной верхний*/
