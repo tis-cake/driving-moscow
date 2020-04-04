@@ -4262,6 +4262,10 @@ button:hover>.bottom-icon-arrow:after {
     background-position: center;
 }
 
+.stock-banner-large_article {
+    background-image: url(../img/articles-top-banner-bg.png);
+}
+
 .banner-large-context {
     flex-basis: 40%;
     max-width: 50%;
@@ -7683,6 +7687,9 @@ a:hover .play-btn-icon {
         background-image: url(../img/news-top-banner-bg-mobile.png);
         padding: 5.5rem 3.6rem;
         align-items: flex-start;
+    }
+    .stock-banner-large_article {
+        background-image: url(../img/articles-top-banner-bg-mobile.png);
     }
     .banner-large-context {
         flex-basis: 100%;
