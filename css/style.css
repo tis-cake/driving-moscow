@@ -1329,7 +1329,7 @@ a:hover .right-white-icon:after {
 .heading-title {
     font-size: 4.8rem;
     font-weight: 700;
-    /* margin-bottom: 3rem; */
+     margin-bottom: 3rem; 
 }
 
 .heading-caption {
@@ -5197,9 +5197,9 @@ a:hover .play-btn-icon {
 
 .checkmark-icon-small {
     display: inline-block;
-    background-image: url(../img/svg/checkmark.svg);
-    width: 1.8rem;
-    height: 1.4rem;
+    background-image: url(../img/svg/correct.svg);
+    width: 3.8rem;
+    height: 3.4rem;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -8710,3 +8710,29 @@ a:hover .play-btn-icon {
 /* END OTHER ARTICLES */
 
 /*END ARTICLE-DETAIL PAGE*/
+
+/* NEWS-DETAIL PAGE */
+
+.news-detail .breadcrumbs {
+    margin-bottom: 13.4rem;
+}
+
+.news-detail .news-block-date {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.news-detail .news-block-title {
+    margin-bottom: 5rem;
+    font-size: 5rem;
+    line-height: 6.2rem;
+}
+
+.news-detail p {
+    margin-bottom: 4.2rem;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+/* NEWS-DETAIL PAGE END*/
