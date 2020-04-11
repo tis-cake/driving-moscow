@@ -132,7 +132,9 @@ footer {
 }
 
 section {
-    padding: 12rem 0;
+    /*padding: 12rem 0;*/
+    padding-top: 6rem;
+    padding-bottom: 12rem;
 }
 
 /* ИНДИВИДУАЛЬНЫЕ ОТСТУПЫ */
@@ -175,7 +177,7 @@ section {
 }
 
 /*для элементов с хлебными крошками*/
-.price,
+/*.price,
 .webinar-banner,
 .reviews,
 .branches,
@@ -186,9 +188,18 @@ section {
 .news,
 .awards,
 .our-vacancies,
-.article {
+.article,
+.instruktor,
+.auto-trans-top-banner,
+.women-top-banner,
+.driving-lessons-banner,
+.timetable,
+.callManager-banner,
+.test-drive-banner,
+.questions-banner,
+.districts {
     padding-top: 6rem;
-}
+}*/
 
 .our-contacts,
 .our-vacancies {
@@ -513,6 +524,7 @@ section {
 .modal-vopros,
 .modal-callback,
 .modal-submit,
+.modal-other-filial,
 .message {
     display: flex;
     flex-direction: column;
@@ -541,6 +553,7 @@ section {
 .modal-vopros.active,
 .modal-callback.active,
 .modal-submit.active,
+.modal-other-filial.active,
 .message.active {
     width: 90.5rem;
     height: 92.5rem;
@@ -552,12 +565,12 @@ section {
     transform: translate(-50%, -50%);
 }
 
+.modal-other-filial.active,
 .modal-callback.active {
     height: auto;
     padding-top: 16.8rem;
     padding-bottom: 10.6rem;
 }
-
 
 .message.active {
     height: auto;
@@ -625,6 +638,10 @@ section {
     background-image: url(../img/svg/submit-callback.svg);
 }
 
+.submit-title--without-icon::before {
+  content: none;
+}
+
 .submit-caption {
     font-size: 2rem;
     font-weight: 500;
@@ -687,7 +704,8 @@ section {
 .modal-submit.active .submit-title,
 .modal-submit.active .btn-submit,
 .message.active .submit-caption,
-.message.active .submit-title {
+.message.active .submit-title,
+.modal-other-filial.active .submit-title {
     opacity: 1;
 }
 
@@ -695,6 +713,30 @@ section {
 .modal-callback .btn-submit,
 .modal-submit .btn-submit {
     margin-top: 6.5rem;
+}
+
+/* выбор другого филиала */
+.modal-other-filial.active {
+  padding-top: 11rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.modal-other-filial__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-other-filial__item {
+  width: 33%;
+}
+
+.modal-other-filial__link {
+  display: flex;
+  line-height: 2.2rem;
+  margin: 1.5rem 0;
+  padding-right: 2rem;
+  transition: 0.2s;
 }
 
 /*конец формы заявки*/
@@ -718,7 +760,6 @@ section {
 }
 
 /*конец акции*/
-
 
 /*header and footer*/
 .header-top {
@@ -2129,9 +2170,28 @@ a:hover>.bottom-velvet-icon:after {
     margin-bottom: 0.5rem;
 }
 
-.seo p {
+.seo h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  font-weight: 500;
+}
+
+.seo p,
+.seo ul li {
     font-size: 1.8rem;
     line-height: 3rem;
+}
+
+.seo li {
+  padding-left: 2rem;
+}
+
+.seo li::before {
+  position: absolute;
+  content: '-';
+  left: 0;
 }
 
 .seo div {
@@ -2847,7 +2907,7 @@ p .light {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 7rem;
+    /*padding-top: 7rem;*/
 }
 
 .callManager-banner-wrapper {
@@ -3804,7 +3864,8 @@ input[type="radio"]:checked+.calculator-select-btn {
 .map-block {
     width: 100%;
     /*height: 60rem;*/
-    height: 75rem;
+    /*height: 75rem;*/
+    height: 100%;
     border-radius: 4.6rem;
     overflow: hidden;
     box-shadow: 1.7rem 1.1rem 4.6rem 0 rgba(15, 13, 47, 0.13);
@@ -4944,6 +5005,7 @@ a:hover .play-btn-icon {
     font-size: 2.7rem;
     font-weight: 700;
     margin-bottom: 4rem;
+    cursor: pointer;
 }
 
 .district-line-list {
@@ -6573,9 +6635,21 @@ a:hover .play-btn-icon {
         margin-bottom: 6rem;
     }
 
-    .seo p {
+    .seo h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+
+    .seo p,
+    .seo ul li {
         font-size: 3rem;
         line-height: 1.2;
+    }
+
+    .seo li {
+      /*padding-left: 2rem;*/
     }
 
     .seo div {
@@ -8352,6 +8426,11 @@ a:hover .play-btn-icon {
   color: #141517;
 }
 
+.article ol {
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+}
+
 .article-container p {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -8844,6 +8923,11 @@ a:hover .play-btn-icon {
 
   .article-title {
     margin-bottom: 7.4rem;
+  }
+
+  .article ol {
+    font-size: 3.3rem;
+    line-height: 3.8rem;
   }
 
   .article-container p {

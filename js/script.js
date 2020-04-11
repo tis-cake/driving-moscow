@@ -35,44 +35,66 @@ $(document).ready(function() {
 });
 
 /*оставить заявку*/
-$(document).ready(function() {
-    $('body').on('click','.submit-application',function () {
-        event.preventDefault();
-        var btn = $(this);
-        $('.overlay').fadeIn(200,
-            function() {
-                $('.modal-submit').addClass('active');
-                $('html, header').width($('html, header').width());
-                $('html').css('overflow', 'hidden');
-            });
-    });
+// $(document).ready(function() {
+//     $('body').on('click','.submit-application',function () {
+//         event.preventDefault();
+//         var btn = $(this);
+//         $('.overlay').fadeIn(200,
+//             function() {
+//                 $('.modal-submit').addClass('active');
+//                 $('html, header').width($('html, header').width());
+//                 $('html').css('overflow', 'hidden');
+//             });
+//     });
 
 
-    $('.close-btn, .overlay, .modal-slide-btn').click(function() {
-        $('.modal-submit').removeClass('active');
-        $('.overlay').fadeOut(200);
-        $('html').removeAttr('style');
-    });
-});
+//     $('.close-btn, .overlay, .modal-slide-btn').click(function() {
+//         $('.modal-submit').removeClass('active');
+//         $('.overlay').fadeOut(200);
+//         $('html').removeAttr('style');
+//     });
+// });
 
 /*заказать звонок*/
-$(document).ready(function() {
-    $('.footer-request-call').click(function(event) {
+// $(document).ready(function() {
+//     $('.footer-request-call').click(function(event) {
+//         event.preventDefault();
+//         var btn = $(this);
+//         $('.overlay').fadeIn(200,
+//             function() {
+//                 $('.modal-callback').addClass('active');
+//                 $('html, header').width($('html, header').width());
+//                 $('html').css('overflow', 'hidden');
+//             });
+//     });
+//     $('.close-btn, .overlay, .modal-slide-btn').click(function() {
+//         $('.modal-callback').removeClass('active');
+//         $('.overlay').fadeOut(200);
+//         $('html').removeAttr('style');
+//     });
+// });
+
+// модальные окна
+function modalShow(clickElement, modalClass) {
+    $('.' + clickElement).click(function(event) {
         event.preventDefault();
         var btn = $(this);
         $('.overlay').fadeIn(200,
             function() {
-                $('.modal-callback').addClass('active');
+                $('.' + modalClass).addClass('active');
                 $('html, header').width($('html, header').width());
                 $('html').css('overflow', 'hidden');
             });
     });
     $('.close-btn, .overlay, .modal-slide-btn').click(function() {
-        $('.modal-callback').removeClass('active');
+        $('.' + modalClass).removeClass('active');
         $('.overlay').fadeOut(200);
         $('html').removeAttr('style');
     });
-});
+};
+modalShow('footer-request-call', 'modal-callback'); /*оставить заявку*/
+modalShow('submit-application', 'modal-submit');    /*заказать звонок*/
+modalShow('header-lower-right-tel', 'modal-other-filial');    /*показать другой филиал*/
 
 // маска для телефона
 $(document).ready(function () {
