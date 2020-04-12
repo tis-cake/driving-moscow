@@ -444,8 +444,9 @@ $(document).ready(function() {
 
 /*Слайдер наше авто для мобильной версии*/
 var autoSwiper = new Swiper('.auto-swiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
+    // slidesPerView: 1.2,
+    // spaceBetween: 20,
+    slidesPerView: 1
 });
 var mql = window.matchMedia('all and (max-width: 768px)');
 if (mql.matches) {
@@ -458,8 +459,9 @@ if (mql.matches) {
 
 /*Слайдер наша команда для мобильной версии*/
 var teamSwiper = new Swiper('.team-swiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
+    // slidesPerView: 1.2,
+    // spaceBetween: 20,
+    slidesPerView: 1
 });
 if (mql.matches) {
 
@@ -467,3 +469,14 @@ if (mql.matches) {
     // нет, размер окна более 1000px 
     teamSwiper.destroy(true, true);
 }
+
+// var autoSwiper = new Swiper('#cars-swiper', {
+//     slidesPerView: 1,
+//     // spaceBetween: 20,
+// });
+// if (mql.matches) {
+
+// } else {
+//     // нет, размер окна более 1000px 
+//     autoSwiper.destroy(true, true);
+// }
