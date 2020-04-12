@@ -126,6 +126,10 @@ body {
     background-color: #f7f7f7;
 }
 
+iframe {
+  height: 100%;
+}
+
 footer {
     background-color: #fff;
     z-index: 0;
@@ -210,7 +214,7 @@ section {
 .delivery,
 .seo {
   padding-top: 2rem;
-  padding-bottom: 7rem;
+  /*padding-bottom: 10rem;*/
 }
 
 /*КОНЕЦ*/
@@ -235,7 +239,7 @@ section {
 }
 
 .page:hover {
-    border: 1px solid tomato;
+    /*border: 1px solid #C0C0C0;*/
 }
 
 .page:nth-child(5n) {
@@ -1777,6 +1781,10 @@ a:hover .right-white-icon:after {
     border-radius: 3.6rem;
 }
 
+.address-col-small-search #metro-value {
+    padding-right: 2rem;
+  }
+
 .address-col-small-search input::placeholder {
     font-weight: 500;
 }
@@ -1948,7 +1956,8 @@ a:hover .right-white-icon:after {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 2.1rem;
+    /*width: 2.1rem;*/
+    width: 3.1rem;
     height: 3.1rem;
     position: absolute;
     left: 4rem;
@@ -2059,6 +2068,8 @@ a:hover .right-white-icon:after {
     margin-right: 0.7rem;
     /*box-shadow: 1px 6px 5px 0 rgba(74, 91, 134, 0.25);*/
     flex-shrink: 0;
+
+    margin-top: 0.5rem;
 }
 
 .metro-icon-shadow:before {
@@ -2185,6 +2196,7 @@ a:hover>.bottom-velvet-icon:after {
 }
 
 .seo li {
+  position: relative;
   padding-left: 2rem;
 }
 
@@ -4771,10 +4783,22 @@ button:hover>.bottom-icon-arrow:after {
 }
 
 .price-included-list {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    -o-column-count: 3;
-    column-count: 3;
+    /*-webkit-column-count: 3;*/
+    /*-moz-column-count: 3;*/
+    /*-o-column-count: 3;*/
+    /*column-count: 3;*/
+
+    display: flex;
+    /*flex-wrap: wrap;*/
+}
+
+.price-included-list li {
+    /*width: 33%;*/
+
+    position: relative;
+    padding-left: 4rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .price-included-title {
@@ -4783,14 +4807,7 @@ button:hover>.bottom-icon-arrow:after {
     margin-bottom: 3.5rem;
 }
 
-.price-included-list li {
-    position: relative;
-    padding-left: 4rem;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.price-included-list li:before {
+.price-included-list ul li:before {
     content: '';
     position: absolute;
     background-image: url(../img/svg/checkmark.svg);
@@ -5052,6 +5069,15 @@ a:hover .play-btn-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    margin-top: 0.5rem;
+}
+
+.metro-icon-absolute {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
 }
 
 /*.metro-icon-shadow-large:before {*/
@@ -5638,6 +5664,7 @@ a:hover .play-btn-icon {
 .webinar-right {
     width: 52%;
     max-width: 52%;
+    padding-top: 6rem;
 }
 
 .webinar-left {
@@ -5659,7 +5686,7 @@ a:hover .play-btn-icon {
 
 .webinar-wrapper {
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .graph-number.bigger {
@@ -5680,6 +5707,15 @@ a:hover .play-btn-icon {
     overflow: hidden;
     border-radius: 2.8rem;
     height: 38.6rem;
+
+    height: 57.6rem;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+}
+
+.helpful-col-1 a {
+  height: 53rem;
 }
 
 .helpful-col-2 {
@@ -5744,11 +5780,6 @@ a:hover .play-btn-icon {
 }
 
 
-
-
-
-
-
 @media (max-width: 108em) {
     html {
         font-size: 56.25%;
@@ -5800,6 +5831,157 @@ a:hover .play-btn-icon {
     section {
         padding: 6rem 0;
     }
+
+    /*форма заявки*/
+    .message-comment,
+    .modal-vopros,
+    .modal-callback,
+    .modal-submit,
+    .modal-other-filial,
+    .message {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+    .message-comment.active,
+    .modal-vopros.active,
+    .modal-callback.active,
+    .modal-submit.active,
+    .modal-other-filial.active,
+    .message.active {
+        width: 90%;
+        height: auto;
+    }
+
+    .modal-other-filial.active,
+    .modal-callback.active {
+        height: auto;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    .message.active {
+        height: auto;
+        padding-top: 10rem;
+    }
+
+    .close-btn {
+        right: 3rem;
+        top: 4rem;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .close-btn::before,
+    .close-btn::after {
+        top: 1.4rem;
+        width: 4rem;
+        height: 0.3rem;
+    }
+
+    .submit-title {
+      text-align: center;
+        font-size: 4.8rem;
+        margin-bottom: 4rem;
+    }
+
+/*    .submit-title:before {
+        top: -4rem;
+        width: 6.6rem;
+        height: 5.2rem;
+        transform: translate(-3.3rem, -2.6rem);
+    }
+*/
+    .submit-caption {
+      text-align: center;
+        font-size: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    .modal-vopros input,
+    .modal-callback input,
+    .modal-submit input {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        /*border-radius: 4rem;*/
+        margin-bottom: 2rem;
+        font-size: 3rem;
+    }
+
+    .btn-submit {
+        font-size: 3rem;
+    }
+
+    .btn-submit .right-velvet-icon {
+        margin-left: 0.7rem;
+    }
+
+    .modal-vopros .btn-submit,
+    .modal-callback .btn-submit,
+    .modal-submit .btn-submit {
+        margin-top: 4rem;
+    }
+
+    /* выбор другого филиала */
+    .modal-other-filial.active {
+      padding-top: 10rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    .modal-other-filial__list {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .modal-other-filial__item {
+      width: 100%;
+    }
+
+    .modal-other-filial__link {
+      /*justify-content: center;*/
+
+      line-height: 2.2rem;
+      margin: 1.5rem 0;
+      padding-right: 0;
+    }
+
+
+    /* ИНДИВИДУАЛЬНЫЕ ОТСТУПЫ */
+
+    .schoolMoscow,
+    .best-price,
+    .about-graph,
+    .helpful,
+    .helpful-slider,
+    .feedback,
+    .stock,
+    .reviews,
+    .branches,
+    .accelerated-banner,
+    .about-top,
+    .auto,
+    .school-at-home,
+    .address,
+    .price,
+    .webinar-banner,
+    .gift-certificate,
+    .schoolMoscow,
+    .comments,
+    .form-vacancies,
+    .our-contacts,
+    .our-vacancies,
+    .article-news-blocks,
+    .question,
+    .delivery,
+    .seo {
+        padding: 12rem 0;
+    }
+
+    /*КОНЕЦ*/
 
     .container {
         width: 90%;
@@ -5889,7 +6071,7 @@ a:hover .play-btn-icon {
 
     .close-btn {
         position: absolute;
-        right: 5%;
+        right: 3%;
         /*top: 3rem;*/
         width: 5.9rem;
         height: 5.9rem;
@@ -5954,6 +6136,11 @@ a:hover .play-btn-icon {
 
     .mobile-menu-block.active {
         transform: translateY(0);
+    }
+
+    .mobile-header-nav-list.sub-list {
+      padding-left: 2rem;
+      color: #575757;
     }
 
     .mobile-header-nav-item-link {
@@ -6176,6 +6363,7 @@ a:hover .play-btn-icon {
         font-size: 3rem;
         border-radius: 4.2rem;
     }
+  
 
     .address-col-small-search:before {
         right: 5rem;
@@ -6530,16 +6718,21 @@ a:hover .play-btn-icon {
         max-width: 100%;
         margin-bottom: 3rem;
         border-radius: 6.5rem;
+
+        padding-top: 10.5rem;
+        padding-bottom: 4rem;
     }
 
     .large-card-title {
         font-size: 4.8rem;
         max-width: 100%;
+        margin-bottom: 7rem;
     }
 
     .large-card-text {
         font-size: 3rem;
         max-width: 100%;
+        margin-bottom: 7rem;
     }
 
     .large-card-btn {
@@ -6583,6 +6776,7 @@ a:hover .play-btn-icon {
 
     .school-at-home-btn {
         font-size: 3rem;
+        font-size: 6rem;
     }
 
     .address-title {
