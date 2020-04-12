@@ -4707,10 +4707,24 @@ button:hover>.bottom-icon-arrow:after {
 }
 
 .price-col-small .filter-handler_price {
+    position: relative;
     padding: 2.5rem 3rem;
     border-radius: 3.6rem;
     background-color: #fff;
     overflow: hidden;
+}
+
+.price-form .filter-item:first-of-type .filter-handler_price {
+  position: relative;
+}
+
+.price-form .filter-item:first-of-type .filter-handler_price::before {
+  position: absolute;
+  content: 'Категория прав';
+  top: 0.7rem;
+
+  font-size: 1.8rem;
+  color: #a4a4a4;
 }
 
 .price-col-small {
@@ -5779,6 +5793,9 @@ a:hover .play-btn-icon {
     display: flex;
 }
 
+.cars-slider {
+  display: none;
+}
 
 @media (max-width: 108em) {
     html {
@@ -5830,6 +5847,12 @@ a:hover .play-btn-icon {
 
     section {
         padding: 6rem 0;
+    }
+    .cars-wrapper {
+      display: none;
+    }
+    .cars-slider {
+      display: block;
     }
 
     /*форма заявки*/
@@ -6208,6 +6231,11 @@ a:hover .play-btn-icon {
         margin-bottom: 2.5rem;
     }
 
+    .price-form div {
+        margin-right: 0;
+        border-radius: 4.7rem;
+    }
+
     .header-mobile-middle {
         background-color: #f7f7f7;
     }
@@ -6468,6 +6496,7 @@ a:hover .play-btn-icon {
     .main-slide-block {
         flex-basis: 100%;
         max-width: 100%;
+        width: 100%;
         padding: 3rem 0;
     }
 
@@ -6606,7 +6635,7 @@ a:hover .play-btn-icon {
     .best-price-block {
         flex-basis: 100%;
         max-width: 100%;
-        margin-bottom: 4rem;
+        margin-bottom: 7rem;
         padding-top: 3rem;
     }
 
@@ -6624,17 +6653,20 @@ a:hover .play-btn-icon {
 
     .best-price-block_a {
         background-image: url(../img/best-price-1-mob.png);
-        height: 35.8rem;
+        /*height: 35.8rem;*/
+        height: 52.8rem;
     }
 
     .best-price-block_a1 {
         background-image: url(../img/best-price-2-mob.png);
-        height: 35.8rem;
+        /*height: 35.8rem;*/
+        height: 52.8rem;
     }
 
     .best-price-block_b {
         background-image: url(../img/best-price-3-mob.png);
-        height: 36.8rem;
+        /*height: 36.8rem;*/
+        height: 52.8rem;
     }
 
     /* .best-price-block_a {
@@ -6774,9 +6806,16 @@ a:hover .play-btn-icon {
         align-items: center;
     }
 
+    .school-at-home-list li:before {
+        height: 3rem;
+    }
+
     .school-at-home-btn {
         font-size: 3rem;
         font-size: 6rem;
+    }
+    .webinar-wrapper a {
+      height: auto;
     }
 
     .address-title {
@@ -7080,6 +7119,7 @@ a:hover .play-btn-icon {
 
     .stock-banner-large-title {
         font-size: 4.8rem;
+        font-size: 6rem;
     }
 
     .stock-banner-large-title:before {
@@ -7243,7 +7283,7 @@ a:hover .play-btn-icon {
     }
 
     .question-btn {
-        margin-left: 0;
+        /*margin-left: 0;*/
     }
 
     .form-vacancies .section-heading {
@@ -7339,7 +7379,7 @@ a:hover .play-btn-icon {
     }
 
     .more-content-btn {
-        text-align: left;
+        /*text-align: left;*/
     }
 
     .bottom-yellow-icon {
@@ -7509,6 +7549,9 @@ a:hover .play-btn-icon {
     .delivery-banner-text {
         font-size: 3rem;
     }
+    .cheking-line-icon {
+        height: 3rem;
+    }
     .graph-wrapper {
         flex-wrap: wrap;
         align-items: center;
@@ -7525,7 +7568,11 @@ a:hover .play-btn-icon {
     }
     .helpful-col-1 {
         width: 100%;
+        height: 64.6rem;
         margin-bottom: 6rem;
+    }
+    .helpful-col-1 a {
+      height: 100%;
     }
     .helpful-col-2 {
         width: 100%;
@@ -7818,7 +7865,7 @@ a:hover .play-btn-icon {
         font-size: 1.2;
     }
     .map-block {
-        height: 69.5rem;
+        /*height: 69.5rem;*/
     }
     .moto-swiper {
         overflow: visible;
@@ -7856,9 +7903,9 @@ a:hover .play-btn-icon {
     .school-at-home-list {
         margin-bottom: 3.5rem;
     }
-    .school-at-home-list li {
-        margin-bottom: 2rem;
-    }
+    /*.school-at-home-list li {*/
+        /*margin-bottom: 2rem;*/
+    /*}*/
     .btn-link {
         font-size: 3rem;
     }
@@ -7880,6 +7927,7 @@ a:hover .play-btn-icon {
         max-width: 100%;
     }
     .school-at-home-title {
+      padding-right: 14rem;
         font-size: 4.5rem;
         margin-bottom: 5rem;
     }
@@ -8005,7 +8053,8 @@ a:hover .play-btn-icon {
     .about-top-banner-media {
         flex-basis: 100%;
         max-width: 100%;
-        height: 45rem;
+        /*height: 45rem;*/
+        height: 52rem;
     }
     .about-top-subTitle {
         font-size: 3rem;
@@ -8108,19 +8157,24 @@ a:hover .play-btn-icon {
         border-radius: 4.7rem;
     }
     .price-included-list {
-        column-count: 1;
+      flex-direction: column;
+      /*flex-wrap: wrap;*/
+        /*column-count: 1;*/
     }
     .price-included-list li {
         position: relative;
-        padding-left: 0;
+        padding-left: 1.6rem;
         font-size: 2.8rem;
         margin-bottom: 2rem;
     }
     .price-included-list li:last-child {
         margin-bottom: 0;
     }
-    .price-included-list li:before {
-        content: initial;
+    .price-included-list ul li:before {
+        /*content: initial;*/
+        height: 2.2rem;
+        left: -1.5rem;
+        top: 0.2rem;
     }
     .price-included-title {
         font-size: 3.5rem;
@@ -8272,8 +8326,8 @@ a:hover .play-btn-icon {
         margin-right: 0;
     }
     .metro-icon-shadow-large {
-        width: 4rem;
-        height: 4rem;
+        width: 5.5rem;
+        height: 5.5rem;
         margin-right: 2rem;
     }
     .metro-icon-shadow-large:after {
@@ -8329,6 +8383,7 @@ a:hover .play-btn-icon {
         padding-top: 6.5rem;
         padding-bottom: 45rem;
         height: initial;
+        /*background-size: 105%;*/
     }
     .gift-certificate-wrapper_car {
         background-size: contain;
@@ -8336,7 +8391,8 @@ a:hover .play-btn-icon {
         padding-bottom: 38rem;
     }
     .gift-certificate .school-at-home-list li {
-        font-size: 2.7rem;
+        /*font-size: 2.7rem;*/
+        font-size: 2.9rem;
     }
     .question .question-btn {
         text-align: center;
@@ -8458,6 +8514,11 @@ a:hover .play-btn-icon {
         font-size: 3rem;
         margin-bottom: 4rem;
     }
+    .accelerated-banner-right,
+    .accelerated-banner-right .accelerated-banner-right-title,
+    .accelerated-banner-right .accelerated-banner-right-text {
+      font-size: 3rem;
+    }
 
     .mobile {
         display: block;
@@ -8470,9 +8531,9 @@ a:hover .play-btn-icon {
         display: none;
     }
 
-}
+/*}*/
 
-@media (max-width: 420px) {
+/*@media (max-width: 420px) {*/
   .team-wrapper {
     /*flex-wrap: nowrap;*/
     flex-direction: column;
