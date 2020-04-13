@@ -464,7 +464,7 @@ if (mql.matches) {
 
 } else {
     // нет, размер окна более 1000px 
-    autoSwiper.destroy(true, true);
+    // autoSwiper.destroy(true, true);
 }
 
 
@@ -474,12 +474,12 @@ var teamSwiper = new Swiper('.team-swiper', {
     // spaceBetween: 20,
     slidesPerView: 1
 });
-if (mql.matches) {
+// if (mql.matches) {
 
-} else {
-    // нет, размер окна более 1000px 
-    teamSwiper.destroy(true, true);
-}
+// } else {
+//     // нет, размер окна более 1000px 
+//     teamSwiper.destroy(true, true);
+// }
 
 // var autoSwiper = new Swiper('#cars-swiper', {
 //     slidesPerView: 1,
@@ -512,7 +512,8 @@ $(window).on('scroll', function () {
 });
 
 // плавный переход по якорям
-$(".aside-list").on("click","a", function (event) {
+asideАnchor = $('.aside-link').not('.aside-page-link');
+$(asideАnchor).on("click", function (event) {
     event.preventDefault();
     var id  = $(this).attr('href'),
         top = $(id).offset().top;
