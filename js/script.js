@@ -106,8 +106,9 @@ $(document).ready(function () {
 /*слайдер на главной верхний*/
 var swiper = new Swiper('.main-swiper', {
     effect: 'fade',
+    speed: 2000,
     autoplay: {
-        delay: 3000,
+        delay: 6000,
         disableOnInteraction: false,
     },
     pagination: {
@@ -147,6 +148,10 @@ var swiper = new Swiper('.main-swiper', {
 
 $('.reviews-tab-select').click(function() {
     $('.reviews-tab-select-form').toggleClass('active');
+});
+
+$('.sub-list-toggle').click(function() {
+    $('.mobile-header-nav-list.sub-list').slideToggle();
 });
 
 $('body').on('click', function(e) {
@@ -486,3 +491,24 @@ if (mql.matches) {
 //     // нет, размер окна более 1000px 
 //     autoSwiper.destroy(true, true);
 // }
+
+console.log('blea');
+
+$(window).on('scroll', function () {
+
+  var corner = $('section');
+  console.log(corner);
+  var cornersList = $('.aside-list');
+  var cornersListHeight = cornersList.outerHeight();
+
+  var cornerCurrentPosition = $(this).scrollTop();
+  corner.each(function() {
+    var borderTop = $(this).offset().top - cornersListHeight;
+    var borderBottom = borderTop + $(this).outerHeight();
+    
+    if (cornerCurrentPosition >= borderTop && cornerCurrentPosition <= borderBottom) {
+      cornersList.find('a').removeClass('active');
+      cornersList.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+    }
+  });
+});

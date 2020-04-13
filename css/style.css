@@ -756,6 +756,11 @@ section {
     margin-top: 6.5rem;
 }
 
+.modal .address-col-small-search {
+    margin-top: 4rem;
+    margin-bottom: 3.5rem;
+}
+
 /* выбор другого филиала */
 .modal-other-filial.active {
   padding-top: 11rem;
@@ -770,6 +775,7 @@ section {
 
 .modal-other-filial__item {
   width: 33%;
+  /*margin-bottom: 1rem;*/
 }
 
 .modal-other-filial__list .modal-other-filial__link {
@@ -1811,7 +1817,7 @@ a:hover .right-white-icon:after {
 }
 
 .address-col-small-search input {
-    padding: 2.5rem 5rem 2.5rem 6rem;
+    padding: 2.5rem 5rem 2.5rem 7rem;
     width: 100%;
     height: 100%;
     font-size: 1.8rem;
@@ -5832,6 +5838,13 @@ a:hover .play-btn-icon {
 .reviews-tab-select-form {
   display: none;
 }
+.swiper-slide-link{
+    display: none;
+    height: 100%;
+}
+#form_drugoj-filial .address-col-small {
+    max-width: 100%;
+}
 
 @media (max-width: 108em) {
     html {
@@ -5995,9 +6008,10 @@ a:hover .play-btn-icon {
       padding-right: 5rem;
     }
 
-    .modal-other-filial__list {
+    .modal .modal-other-filial__list {
       flex-direction: column;
       width: 100%;
+      height: 30rem;
     }
 
     .modal-other-filial__item {
@@ -6203,6 +6217,7 @@ a:hover .play-btn-icon {
     }
 
     .mobile-header-nav-list.sub-list {
+      display: none;
       padding-left: 2rem;
       color: #575757;
     }
@@ -6489,6 +6504,9 @@ a:hover .play-btn-icon {
         padding: 6.5rem 3.5rem 5.5rem;
         border-radius: 2.3rem;
         position: relative;
+    }
+    .address-cards {
+        width: 100%;
     }
 
     .address-card-text-medium {
@@ -6853,7 +6871,7 @@ a:hover .play-btn-icon {
 
     .school-at-home-btn {
         font-size: 3rem;
-        font-size: 6rem;
+        /*font-size: 6rem;*/
     }
     .webinar-wrapper a {
       height: auto;
@@ -7324,7 +7342,15 @@ a:hover .play-btn-icon {
     }
 
     .question-btn {
-        /*margin-left: 0;*/
+        margin-left: 0;
+    }
+
+    .question-btn {
+        margin-left: 0;
+    }
+
+    .leave-feedback .question-btn {
+        margin-left: auto;
     }
 
     .form-vacancies .section-heading {
@@ -7420,7 +7446,11 @@ a:hover .play-btn-icon {
     }
 
     .more-content-btn {
-        /*text-align: left;*/
+        text-align: left;
+    }
+
+    .reviews-tabs-container .more-content-btn {
+        text-align: center;
     }
 
     .bottom-yellow-icon {
@@ -9594,6 +9624,10 @@ a:hover .play-btn-icon {
   }
 
   /* END REVIEWS SELECT */
+    
+  .aside {
+    display: none;
+  }
 
 }
 
@@ -9601,6 +9635,8 @@ a:hover .play-btn-icon {
 
 .aside {
     position: fixed;
+    /*position: sticky;*/
+    /*top: 0px;*/
     z-index: 60;
 
     transform: translateY(-50%);
