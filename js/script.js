@@ -92,9 +92,10 @@ function modalShow(clickElement, modalClass) {
         $('html').removeAttr('style');
     });
 };
-modalShow('footer-request-call', 'modal-callback'); /*оставить заявку*/
-modalShow('submit-application', 'modal-submit');    /*заказать звонок*/
-modalShow('header-lower-right-tel', 'modal-other-filial');    /*показать другой филиал*/
+modalShow('footer-request-call', 'modal-callback');          /*оставить заявку*/
+modalShow('submit-application', 'modal-submit');             /*заказать звонок*/
+// modalShow('branch-btn-other', 'modal-other-filial');    /*показать другой филиал*/
+
 
 // маска для телефона
 $(document).ready(function () {
@@ -144,6 +145,15 @@ var swiper = new Swiper('.main-swiper', {
 //     }
 // });
 
+$('.reviews-tab-select').click(function() {
+    $('.reviews-tab-select-form').toggleClass('active');
+});
+
+$('body').on('click', function(e) {
+    if ($(e.target).closest('.reviews-tab-select').length === 0) {
+        $('.reviews-tab-select-form').removeClass('active');
+    }
+});
 
 /*Смещение иконки поиска при фокусировки*/
 $(".address-col-small-search").delegate("*", "focus blur", function(event) {
@@ -187,8 +197,8 @@ var swiper = new Swiper('.docs-swiper', {
         nextEl: '.docs-button-next',
         prevEl: '.docs-button-prev',
     },
-    mousewheel: true,
-    keyboard: true,
+    // mousewheel: true,
+    // keyboard: true,
     breakpoints: {
         768: {
           slidesPerView: 3,
@@ -223,17 +233,6 @@ function updatePrice() {
         $('[name="transmission"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0);
 
     // $( "#amount3" ).val("$" + price);
-
-    if ($("#category-1").is(':checked')) {
-        $('#selectCategory').html('Категория A - Мотоциклы');
-    } else if ($("#category-2").is(':checked')) {
-        $('#selectCategory').html('Категория B - Легковые автомобили');
-    } else if ($("#category-3").is(':checked')) {
-        $('#selectCategory').html('Категория С - Грузовые автомобили');
-    } else if ($("#category-4").is(':checked')) {
-        $('#selectCategory').html('Категория D - Автобусы');
-    }
-
 
     $("#value__result").html(price);
     var oldPrice = +price * 1.7;
@@ -333,7 +332,7 @@ var swiper = new Swiper('.branch-swiper', {
         nextEl: '.branch-button-next',
         prevEl: '.branch-button-prev',
     },
-    mousewheel: true,
+    // mousewheel: true,
     keyboard: true,
     breakpoints: {
         768: {
@@ -352,7 +351,7 @@ var swiper = new Swiper('.info-swiper', {
         nextEl: '.info-button-next',
         prevEl: '.info-button-prev',
     },
-    mousewheel: true,
+    // mousewheel: true,
     keyboard: true,
     breakpoints: {
         768: {
@@ -439,6 +438,13 @@ $(document).ready(function() {
         $('.mobile-address-block').removeClass('active');
         $('.mobile-hidden-blocks').removeClass('active');
         $('html').removeClass('noscroll');
+    })
+
+    $('.mobile-driving-branches').click(function () {
+        $(this).removeClass('active');
+        $('.mobile-address-block').addClass('active');
+        $('.mobile-hidden-blocks').addClass('active');
+        $('.mobile-menu-block').removeClass('active');
     })
 });
 

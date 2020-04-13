@@ -553,6 +553,34 @@ section {
     opacity: 0;
     pointer-events: none;
 }
+
+.modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 14rem;
+    padding-right: 14rem;
+    padding-top: 13rem;
+    padding-bottom: 11rem;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    width: 90.5rem;
+    height: 75rem;
+    margin: 0 auto;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: #f5f5f5;
+    z-index: 51;
+    border-radius: 5rem;
+    border: 1px solid #777;
+}
+.modal .modal-other-filial__list {
+    height: 40rem;
+    overflow: scroll;
+}
+
 .message-comment.active,
 .modal-vopros.active,
 .modal-callback.active,
@@ -622,6 +650,9 @@ section {
     opacity: 0;
     transition: 0.2s;
     transition-delay: 0.5s;
+}
+.modal .submit-title{
+    opacity: 1;
 }
 
 .submit-title:before {
@@ -5797,6 +5828,10 @@ a:hover .play-btn-icon {
   display: none;
 }
 
+.reviews-tab-select-form {
+  display: none;
+}
+
 @media (max-width: 108em) {
     html {
         font-size: 56.25%;
@@ -9465,5 +9500,77 @@ a:hover .play-btn-icon {
       font-size: 3rem;
       line-height: 4rem;
   }
+
+  /* END NEWS-DETAIL PAGE */
+
+  /* REVIEWS SELECT */
+  .reviews-tabs {
+    display: none;
+  }
+
+  .reviews-tab-select-form {
+    position: relative;
+    display: block;
+  }
+
+  .reviews-tab-select {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    margin-bottom: 17rem;
+    padding: 2.5rem 10rem 2.5rem 5rem;
+  
+    font-family: 'Gotham Pro', 'Myriad Pro', sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+
+    background-color: #fff;
+    /*background-image: url('../img/select-arrow.png');
+    background-repeat: no-repeat;
+    background-position: right 3rem top 50%;
+    background-size: 3rem;*/
+
+    border: none;
+    border-radius: 4.2rem;
+
+    box-shadow: 0 0 6.5rem 0 rgba(9, 6, 44, 0.06);
+  
+    /*-webkit-animation: bugfix infinite 1s;
+    transition: 0.3s;*/
+  
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    outline: none;
+  }
+
+  .reviews-tab-select.active {
+    /*background-image: url('../img/select-arrow-top.png');*/
+  }
+
+  .reviews-tab-select-form::after {
+    position: absolute;
+    content: '';
+    top: 3rem;
+    right: 4.8rem;
+    width: 3rem;
+    height: 3rem;
+
+    background-image: url('../img/select-arrow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: 0.3s;
+  }
+
+  .reviews-tab-select-form.active::after {
+    transform: rotate(180deg);
+  }
+
+  /* END REVIEWS SELECT */
 
 }
