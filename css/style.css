@@ -578,7 +578,12 @@ section {
 }
 .modal .modal-other-filial__list {
     height: 40rem;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+
+#form_drugoj-filial .modal {
+    padding-left: 7rem;
+    padding-right: 7rem;
 }
 
 .message-comment.active,
@@ -653,6 +658,7 @@ section {
 }
 .modal .submit-title{
     opacity: 1;
+    text-align: center;
 }
 
 .submit-title:before {
@@ -766,12 +772,13 @@ section {
   width: 33%;
 }
 
-.modal-other-filial__link {
+.modal-other-filial__list .modal-other-filial__link {
   display: flex;
   line-height: 2.2rem;
   margin: 1.5rem 0;
   padding-right: 2rem;
   transition: 0.2s;
+  font-size: 1.8rem;
 }
 
 /*конец формы заявки*/
@@ -4509,19 +4516,23 @@ button:hover>.bottom-icon-arrow:after {
     font-size: 2rem;
 }
 
-.graph-block_1 {
+.graph-block_1,
+.graph-block:nth-child(1) {
     background-image: url(../img/graph-1.png);
 }
 
-.graph-block_2 {
+.graph-block_2,
+.graph-block:nth-child(2) {
     background-image: url(../img/graph-2.png);
 }
 
-.graph-block_3 {
+.graph-block_3,
+.graph-block:nth-child(3) {
     background-image: url(../img/graph-3.png);
 }
 
-.graph-block_4 {
+.graph-block_4,
+.graph-block:nth-child(4) {
     background-image: url(../img/graph-4.png);
 }
 
@@ -4743,19 +4754,6 @@ button:hover>.bottom-icon-arrow:after {
     border-radius: 3.6rem;
     background-color: #fff;
     overflow: hidden;
-}
-
-.price-form .filter-item:first-of-type .filter-handler_price {
-  position: relative;
-}
-
-.price-form .filter-item:first-of-type .filter-handler_price::before {
-  position: absolute;
-  content: 'Категория прав';
-  top: 0.7rem;
-
-  font-size: 1.8rem;
-  color: #a4a4a4;
 }
 
 .price-col-small {
@@ -5753,10 +5751,13 @@ a:hover .play-btn-icon {
     border-radius: 2.8rem;
     height: 38.6rem;
 
-    height: 57.6rem;
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/
+}
+
+.webinar-wrapper .helpful-col-1 {
+    height: 57.6rem;
 }
 
 .helpful-col-1 a {
@@ -5919,6 +5920,10 @@ a:hover .play-btn-icon {
         padding-bottom: 10rem;
     }
 
+   /* #form_drugoj-filial .modal-other-filial__list {
+        height: 40rem;
+    }*/
+
     .message.active {
         height: auto;
         padding-top: 10rem;
@@ -5999,12 +6004,13 @@ a:hover .play-btn-icon {
       width: 100%;
     }
 
-    .modal-other-filial__link {
+    .modal-other-filial__list .modal-other-filial__link {
       /*justify-content: center;*/
 
       line-height: 2.2rem;
       margin: 1.5rem 0;
       padding-right: 0;
+      font-size: 3rem;
     }
 
 
@@ -7601,7 +7607,7 @@ a:hover .play-btn-icon {
     .helpful-wrapper {
         flex-wrap: wrap;
     }
-    .helpful-col-1 {
+    .webinar-wrapper .helpful-col-1 {
         width: 100%;
         height: 64.6rem;
         margin-bottom: 6rem;
@@ -8163,6 +8169,18 @@ a:hover .play-btn-icon {
         padding: 3rem 5rem;
         border-radius: 4.7rem;
     }
+    .price-form .filter-item:first-of-type .filter-handler_price {
+      position: relative;
+    }
+
+    .price-form .filter-item:first-of-type .filter-handler_price::before {
+      position: absolute;
+      content: 'Категория прав';
+      top: 0.7rem;
+
+      font-size: 1.8rem;
+      color: #a4a4a4;
+    }
     .price-col-small {
         flex-basis: 100%;
         max-width: 100%;
@@ -8417,8 +8435,12 @@ a:hover .play-btn-icon {
         align-items: flex-start;
         padding-top: 6.5rem;
         padding-bottom: 45rem;
+        /*padding-bottom: 45rem;*/
         height: initial;
         /*background-size: 105%;*/
+
+        background-size: contain;
+        background-position: bottom;
     }
     .gift-certificate-wrapper_car {
         background-size: contain;
@@ -9573,4 +9595,97 @@ a:hover .play-btn-icon {
 
   /* END REVIEWS SELECT */
 
+}
+
+/* ASIDE */
+
+.aside {
+    position: fixed;
+    z-index: 60;
+
+    transform: translateY(-50%);
+    top: 50%;
+    left: 4.4rem;
+
+    max-width: 40%;
+}
+
+.aside-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aside-item {
+    display: flex;
+    align-items: center;
+}
+
+.aside-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 6.6rem;
+    margin-bottom: 5px;
+    /*padding-left: 20px;*/
+    padding-right: 6rem;
+
+    font-size: 1.6rem;
+    color: #262626;
+    border-radius: 3.4rem;
+
+    transition: .5s;
+}
+
+.aside-link:hover {
+    box-shadow: 13px 17px 49px 8px rgba(17, 15, 32, 0.05);
+    background-color: #ffffff;
+}
+
+.aside-text {
+    max-width: 0%;
+    margin-left: 0.5rem;
+    
+    overflow: hidden;
+    white-space:nowrap;
+
+    transition: 0.2s;
+}
+
+.aside-link:hover .aside-text {
+    max-width: 100%;
+    transition: 0.8s;
+}
+
+.aside-icon {
+    height: 3.6rem;
+    width: 3.6rem;
+}
+
+.aside-icon-wrap {
+    box-sizing: border-box;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 6.6rem;
+    width: 6.6rem;
+
+    border-radius: 50%;
+}
+
+.aside-link.active .aside-icon-wrap {
+    box-shadow: 13px 17px 49px 8px rgba(17, 15, 32, 0.05);
+    background-color: #ffffff;
+}
+
+.aside-link.active .aside-icon {
+    fill: #9f41ff;
+}
+
+.aside-link.active:hover .aside-icon-wrap {
+    box-shadow: none;
 }
