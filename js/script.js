@@ -258,7 +258,7 @@ function updatePrice2() {
         $('[name="formatMob"]').toArray().reduce((sum, n) => sum + +$(n).val(), 0)  +
         $('[name="categoryMob"]').toArray().reduce((sum, n) => sum + +$(n).val(), 0) +
         $('[name="transmissionMob"]').toArray().reduce((sum, n) => sum + +$(n).val(), 0);
-console.log(price);
+    // console.log(price);
     var rangeValue = +$('#amount2').val();
 
     $("#calc-mobile-range-val").html(rangeValue + ' ак/час');
@@ -492,23 +492,29 @@ if (mql.matches) {
 //     autoSwiper.destroy(true, true);
 // }
 
-console.log('blea');
-
+// aside-bar - отмечаем элемент при попадании в поле зрения
 $(window).on('scroll', function () {
 
-  var corner = $('section');
-  console.log(corner);
-  var cornersList = $('.aside-list');
-  var cornersListHeight = cornersList.outerHeight();
+  var el = $('section');
+  var asideList = $('.aside-list');
+  var asideListHeight = asideList.outerHeight();
 
-  var cornerCurrentPosition = $(this).scrollTop();
-  corner.each(function() {
-    var borderTop = $(this).offset().top - cornersListHeight;
+  var elCurrentPosition = $(this).scrollTop();
+  el.each(function() {
+    var borderTop = $(this).offset().top - asideListHeight;
     var borderBottom = borderTop + $(this).outerHeight();
     
-    if (cornerCurrentPosition >= borderTop && cornerCurrentPosition <= borderBottom) {
-      cornersList.find('a').removeClass('active');
-      cornersList.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+    if (elCurrentPosition >= borderTop && elCurrentPosition <= borderBottom) {
+      asideList.find('a').removeClass('active');
+      asideList.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
     }
   });
+});
+
+// плавный переход по якорям
+$(".aside-list").on("click","a", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top}, 700);
 });
