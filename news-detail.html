@@ -1134,7 +1134,7 @@
     </div>
   </header>
   <main>
-    <section class="news news-detail">
+   <!--  <section class="news news-detail">
       <div class="container">
         <div class="breadcrumbs">
           <a href="#" class="breadcrumbs-item">Главная</a>
@@ -1154,6 +1154,53 @@
         <p>На курсах вождения не всегда хорошо усваиваются азы управления, не достаточно уделяется внимания внутреннему устройству. Изучите самостоятельно или пообщайтесь с опытными водителями о механизмах и деталях авто. Изучив устройство и тонкости управления, вы почувствуете больше уверенности на дорогах.</p>
 
       </div>
+    </section> -->
+
+    <section class="form-callManager">
+        <form id="vyzov-menedzhera">
+          <div class="container">
+          <div class="section-heading">
+            <p class="heading-title">Форма вызова</p>
+            <div class="heading-caption">
+              <p>Оставьте заявку, и наш менеджер приедет в течение этого или следующего дня</p>
+            </div>
+          </div>
+          <div class="form-vacancies-wrapper">
+            <input class="vacancies-input" type="text" name="NAME" value="" placeholder="Имя" required="" title="Укажите имя">
+            <input class="vacancies-input phone-mask" type="tel" name="PHONE" value="" placeholder="+7 (___) ___-__-__" required="" title="Укажите номер">
+            <input class="vacancies-input" type="text" name="ADRES" value="" placeholder="Адрес" required="" title="Укажите адрес">
+            <input class="vacancies-input" type="date" name="DATE" value="" placeholder="Дата" required="" title="Укажите дату">
+            <input class="vacancies-input" type="time" name="TIME" value="" placeholder="Укажите время" required="" title="Укажите время">
+            <input class="vacancies-input" type="text" name="COMMENTS" value="" placeholder="Комментарий" required="" title="Ваш комментарий">
+          </div>
+          <p class="form-callManager-text">Для оформления документов необходимо прикрепить скан паспорта: страница с фотографией, страница с пропиской</p>
+          <label for="file" class="more-content-btn" href="javascript:void(0);"><span class="input__file-button-text">Загрузить документ</span> <i class="bottom-yellow-icon"></i></label>
+
+          <input type="file" name="FILE" id="file" class="input__file visually-hidden">
+
+          <input id="form-vacancies-checkbox-hidden" class="form-vacancies-checkbox-hidden agree" type="checkbox" name="AGREE" value="" required="" checked="">
+          <label for="form-vacancies-checkbox-hidden" class="form-vacancies-checkbox" id="agree">согласие на обработку персональных даннных</label>
+          <button class="question-btn" type="submit">Отправить<i class="right-velvet-icon"></i></button>
+        </div>
+        </form>
+
+  <script>
+    let inputs = document.querySelectorAll('.input__file');
+    Array.prototype.forEach.call(inputs, function (input) {
+      let label = document.querySelector('.more-content-btn'),
+        labelVal = label.querySelector('.input__file-button-text').innerText;
+      input.addEventListener('change', function (e) {
+        let countFiles = '';
+        if (this.files && this.files.length >= 1)
+          countFiles = this.files.length;
+ 
+        if (countFiles)
+          label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+        else
+          label.querySelector('.input__file-button-text').innerText = labelVal;
+      });
+    });
+</script>
     </section>
   </main>
 
