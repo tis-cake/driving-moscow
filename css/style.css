@@ -143,27 +143,25 @@ section {
 
 /* ИНДИВИДУАЛЬНЫЕ ОТСТУПЫ */
 
-.schoolMoscow,
+/*.schoolMoscow,
 .best-price,
 .gift-certificate {
     padding-bottom: 4rem;
-}
+}*/
 
-.about-graph,
+/*.about-graph,
 .helpful,
 .helpful-slider,
 .feedback,
 .stock {
     padding-bottom: 3rem;
-}
+}*/
 
 .reviews,
 .branches,
 .accelerated-banner,
 .about-top,
 .auto,
-.school-at-home,
-.address,
 .price,
 .webinar-banner {
     padding-bottom: 0;
@@ -208,6 +206,11 @@ section {
 .our-contacts,
 .our-vacancies {
   padding-bottom: 2rem;
+}
+
+.contacts-form,
+.form-callManager {
+    padding-top: 10rem;
 }
 
 .question,
@@ -953,7 +956,7 @@ section {
 }
 
 .footer-top-col-3 {
-    width: 20%;
+    width: 22%;
 }
 
 .footer-large-title {
@@ -1005,15 +1008,15 @@ section {
 }
 
 .footer-social-viber {
-    background-image: url(../img/social-viber.png);
+    background-image: url(../img/svg/social-viber.svg);
 }
 
 .footer-social-telegram {
-    background-image: url(../img/social-telegram.png);
+    background-image: url(../img/svg/social-telegram.svg);
 }
 
 .footer-social-whatsapp {
-    background-image: url(../img/social-whatsapp.png);
+    background-image: url(../img/svg/social-whatsapp.svg);
 }
 
 .right-velvet-icon {
@@ -2552,8 +2555,10 @@ p .light {
 }
 
 .stock-banner-large-context {
-    flex-basis: 26%;
-    max-width: 26%;
+    /*flex-basis: 26%;*/
+    /*max-width: 26%;*/
+    flex-basis: 32%;
+    max-width: 32%;
 }
 
 .banner-btn {
@@ -3153,6 +3158,10 @@ a:hover>.bottom-yellow-icon:after {
 .docs-swiper {
     width: 100%;
     overflow: hidden;
+}
+
+.docs-swiper.space-evenly .swiper-wrapper {
+    justify-content: space-evenly;
 }
 
 .docs-swiper-wrapper {
@@ -6173,30 +6182,30 @@ a:hover .play-btn-icon {
     }
 
     .mobile-call-item-icon {
-        width: 15rem;
-        height: 15rem;
-        padding-top: 3rem;
+        width: 11rem;
+        height: 11rem;
+        /*padding-top: 3rem;*/
         margin-right: 3rem;
-        margin-bottom: -3rem;
+        /*margin-bottom: -3rem;*/
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
     }
 
     .mobile-call-item-icon_phone {
-        background-image: url(../img/call-1.png);
+        background-image: url(../img/svg/social-call.svg);
     }
 
     .mobile-call-item-icon_telegram {
-        background-image: url(../img/call-2.png);
+        background-image: url(../img/svg/social-telegram.svg);
     }
 
     .mobile-call-item-icon_viber {
-        background-image: url(../img/call-3.png);
+        background-image: url(../img/svg/social-viber.svg);
     }
 
     .mobile-call-item-icon_whatsApp {
-        background-image: url(../img/call-4.png);
+        background-image: url(../img/svg/social-whatsapp.svg);
     }
 
     .mobile-menu-block {
@@ -8913,8 +8922,8 @@ a:hover .play-btn-icon {
   
   position: relative;
   z-index: 1;
-  margin-top: 3rem;
-  
+  /*margin-top: 3rem;*/
+  /*margin-top: 2rem;*/
   font-size: 2rem;
   font-weight: 500;
 }
@@ -9645,12 +9654,14 @@ a:hover .play-btn-icon {
 
     max-width: 40%;
     opacity: 1;
+    visibility: visible;
     transition: .5s;
 }
 
 .aside.hidden-top,
 .aside.hidden-bottom {
   opacity: 0;
+  visibility: hidden;
 }
 
 .aside-list {

@@ -554,9 +554,9 @@ $(document).ready(function () {
   let firstElHeight = firstEl.outerHeight(true);  // высота первого элемента
 
   $(window).scroll(function () {
-    if ($(window).scrollTop() < firstElHeight) {
+    if ($(window).scrollTop() < firstElHeight / 2) {
       mainEl.addClass('hidden-top');
-    } else if ($(window).scrollTop() >= firstElHeight) {
+    } else if ($(window).scrollTop() >= firstElHeight  / 2) {
       mainEl.removeClass('hidden-top');
     }
   });
