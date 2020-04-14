@@ -834,9 +834,29 @@ section {
 }
 
 .header-logo {
-    width: 22%;
+    display: flex;
+    align-items: center;
+
+    width: 23%;
     flex-shrink: 0;
     padding: 0.3rem 0;
+
+    text-transform: initial;
+}
+
+.header-logo-img {
+    width: 4.4rem;
+    height: 4.4rem;
+    margin-right: 1rem;
+}
+
+.header-logo-name {
+    font-size: 2.7rem;
+}
+
+.header-logo-name span {
+    display: block;
+    font-size: 1.6rem;
 }
 
 .header-nav-item {
@@ -850,12 +870,6 @@ section {
 
 .header-nav-item-link {
     font-size: 1.8rem;
-}
-
-.header-logo-name {
-    font-weight: 700;
-    font-size: 2rem;
-    text-transform: uppercase;
 }
 
 .header-nav-item.active:after {
@@ -3160,8 +3174,8 @@ a:hover>.bottom-yellow-icon:after {
     overflow: hidden;
 }
 
-.docs-swiper.space-evenly .swiper-wrapper {
-    justify-content: space-evenly;
+.space-evenly .swiper-wrapper {
+    justify-content: space-evenly!important;
 }
 
 .docs-swiper-wrapper {
@@ -6085,6 +6099,10 @@ a:hover .play-btn-icon {
         padding-left: 10rem;
     }
 
+    .large-card_3 .large-card-title {
+        width: 50rem;
+    }
+
     .bar1,
     .bar2,
     .bar3 {
@@ -6113,7 +6131,20 @@ a:hover .play-btn-icon {
         transform: rotate(-45deg) translate(-0.7rem);
     } */
 
+    header {
+        position: fixed;
+        width: 100%;
+        z-index: 40;
+    }
+
+    main {
+        margin-top: 28rem;
+    }
+
     .header-mobile-top {
+        position: relative;
+        z-index: 1;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -6124,9 +6155,21 @@ a:hover .play-btn-icon {
     }
 
     .mobile-logo {
+        display: flex;
+        align-items: center;
+
         font-size: 3rem;
-        font-weight: 700;
-        text-transform: uppercase;
+    }
+
+
+    .mobile-logo-img {
+        width: 7.2rem;
+        height: 7.2rem;
+        margin-right: 2rem;
+    }
+
+    .mobile-logo-name {
+        font-size: 3.6rem;
     }
 
     .mobile-call-link {
@@ -6302,8 +6345,29 @@ a:hover .play-btn-icon {
     }
 
     .header-mobile-middle {
+        /*position: relative;*/
+        /*z-index: 8;*/
         background-color: #f7f7f7;
+        transition: 0.5s;
     }
+
+    .header-mobile-middle.out {
+        transform: translateY(-20rem);
+    }
+
+    .header-mobile-bottom {
+        transition: 0.5s;
+    }
+
+    .header-mobile-bottom.out {
+        transform: translateY(-24rem);
+    }
+
+    /*.hidden .header-mobile-top,
+    .hidden .header-mobile-middle,
+    .hidden .header-mobile-bottom {
+        z-index: 0;
+    }*/
 
     .header-mobile-middle-wrapper {
         display: flex;

@@ -386,6 +386,7 @@ $(document).ready(function() {
         $(this).toggleClass('active');
         $('.header-desktop').toggleClass('active');
         $('html').toggleClass('noscroll');
+        // $('header').toggleClass('hidden');
     });
 
 /*появление меню связь*/
@@ -394,11 +395,13 @@ $(document).ready(function() {
         $('.mobile-call-block').addClass('active');
         $('.mobile-hidden-blocks').addClass('active');
         $('html').addClass('noscroll');
+        // $('header').addClass('hidden');
     });
     $('.call-close-btn').click(function () {
         $('.mobile-call-block').removeClass('active');
         $('.mobile-hidden-blocks').removeClass('active');
         $('html').removeClass('noscroll');
+        // $('header').removeClass('hidden');
     })
 });
 
@@ -415,6 +418,7 @@ $(document).ready(function() {
         $('#hamburger').removeClass('active');
         $('.mobile-hidden-blocks').removeClass('active');
         $('html').removeClass('noscroll');
+        // $('header').removeClass('hidden');
     })
 });
 
@@ -560,4 +564,28 @@ $(document).ready(function () {
       mainEl.removeClass('hidden-top');
     }
   });
+});
+
+// появление нижнего блока меню
+$(document).ready(function () {
+
+  var headerTopBlock = $('.header-mobile-top'),
+      headerMiddleBlock = $('.header-mobile-middle'),
+      headerBottomBlock = $('.header-mobile-bottom'),
+      scrollPrev = 0;
+
+  $(window).scroll(function() {
+    var scrolled = $(window).scrollTop();
+
+    if ( scrolled > 100 && scrolled > scrollPrev ) {
+      headerTopBlock.addClass('out');
+      headerMiddleBlock.addClass('out');
+      headerBottomBlock.addClass('out');
+    } else {
+      headerTopBlock.removeClass('out');
+      headerMiddleBlock.removeClass('out');
+      headerBottomBlock.removeClass('out');
+    };
+    scrollPrev = scrolled;
+  })
 });
