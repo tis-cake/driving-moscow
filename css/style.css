@@ -9644,6 +9644,13 @@ a:hover .play-btn-icon {
     left: 4.4rem;
 
     max-width: 40%;
+    opacity: 1;
+    transition: .5s;
+}
+
+.aside.hidden-top,
+.aside.hidden-bottom {
+  opacity: 0;
 }
 
 .aside-list {
@@ -9698,6 +9705,8 @@ a:hover .play-btn-icon {
 .aside-icon {
     height: 3.6rem;
     width: 3.6rem;
+    fill: #000;
+    transition: 0.3s;
 }
 
 .aside-icon-wrap {

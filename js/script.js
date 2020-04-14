@@ -492,30 +492,72 @@ var teamSwiper = new Swiper('.team-swiper', {
 //     autoSwiper.destroy(true, true);
 // }
 
-// aside-bar - отмечаем элемент при попадании в поле зрения
-$(window).on('scroll', function () {
+// aside-bar
+$(document).ready(function () {
 
-  var el = $('section');
-  var asideList = $('.aside-list');
-  var asideListHeight = asideList.outerHeight();
+  // !NB: El = Element
 
-  var elCurrentPosition = $(this).scrollTop();
-  el.each(function() {
-    var borderTop = $(this).offset().top - asideListHeight;
-    var borderBottom = borderTop + $(this).outerHeight();
-    
-    if (elCurrentPosition >= borderTop && elCurrentPosition <= borderBottom) {
-      asideList.find('a').removeClass('active');
-      asideList.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+  let mainEl = $('.aside');
+
+  // отмечаем элемент при попадании в поле зрения
+  $(window).on('scroll', function () {
+
+    // mainEl = $('.aside-list');
+
+    let scrollRelativeEl = $('section'); // сравниваем относительно этих элементов (section)
+    let mainElHeight = mainEl.outerHeight();
+
+    let relativeElCurrentPosition = $(this).scrollTop(); // текущая позиция относительного элемента (section)
+    scrollRelativeEl.each(function() {
+      let borderTop = $(this).offset().top - mainElHeight;
+      let borderBottom = borderTop + $(this).outerHeight();
+      
+      if (relativeElCurrentPosition >= borderTop && relativeElCurrentPosition <= borderBottom) {
+        mainEl.find('a').removeClass('active');
+        mainEl.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+      }
+    });
+  });
+
+  // плавный переход по якорям
+  let asideАnchor = $('.aside-link').not('.aside-page-link');
+  $(asideАnchor).on("click", function (event) {
+      event.preventDefault();
+      var id  = $(this).attr('href'),
+          top = $(id).offset().top;
+      $('body,html').animate({scrollTop: top}, 700);
+  });
+
+  // скрываем на футере
+  let target = $('footer');
+  let targetPos = target.offset().top;         // фиксированное расстояние до элемента
+  let windowHeight = $(window).height();
+  let scrollToElem = targetPos - windowHeight; // расстояние до элемента учитывая скроллинг
+
+  $(window).scroll(function(){
+    let winScrollTop = $(this).scrollTop();    // на сколько px проскроллили
+
+    // console.log('проскроллили на ' + winScrollTop + ' px');
+    // console.log('до элемента всего ' + scrollToElem + ' px');
+    // console.log('до элемента осталось ' + (winScrollTop - scrollToElem) + ' px');
+
+    if((winScrollTop - scrollToElem) > 0 ) {
+      // console.log(mainEl)
+      mainEl.addClass('hidden-bottom');
+    } else {
+      mainEl.removeClass('hidden-bottom');
     }
   });
-});
 
-// плавный переход по якорям
-asideАnchor = $('.aside-link').not('.aside-page-link');
-$(asideАnchor).on("click", function (event) {
-    event.preventDefault();
-    var id  = $(this).attr('href'),
-        top = $(id).offset().top;
-    $('body,html').animate({scrollTop: top}, 700);
+  // скрываем на первом элементе после хедера
+  let firstEl = ($('main section:first'));        // первый элемент
+  let firstElHeight = firstEl.outerHeight(true);  // высота первого элемента
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() < firstElHeight) {
+      mainEl.addClass('hidden-top');
+    } else if ($(window).scrollTop() >= firstElHeight) {
+      mainEl.removeClass('hidden-top');
+    }
+  });
 });
