@@ -4812,7 +4812,7 @@ button:hover>.bottom-icon-arrow:after {
 .filter-handler_price {
     display: block;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     font-size: 1.8rem;
     font-weight: 500;
     position: relative;
@@ -6385,11 +6385,15 @@ a:hover .play-btn-icon {
     }
 
     .categories-items_img {
-        width: 4.7rem;
-        height: 4.7rem;
+        top: -1rem;
+        width: 7rem;
+        height: 6rem;
     }
 
     .price-form div {
+        box-sizing: border-box;
+        height: auto;
+
         margin-right: 0;
         border-radius: 4.7rem;
     }
@@ -6520,6 +6524,7 @@ a:hover .play-btn-icon {
 
     .address-form {
         width: 100%;
+        height: auto;
         padding: 4rem 3.5rem;
         border-radius: 4rem;
         box-shadow: 0 0 6.5rem 0 rgba(9, 6, 44, 0.08);
@@ -8056,10 +8061,11 @@ a:hover .play-btn-icon {
         font-size: 3rem;
     }
     .triple-banner-body-context p {
-        font-size: 1.2;
+        /*font-size: 1.2;*/
+        font-size: 100%;
     }
     .map-block {
-        /*height: 69.5rem;*/
+        height: 69.5rem;
     }
     .moto-swiper {
         overflow: visible;
@@ -8583,12 +8589,13 @@ a:hover .play-btn-icon {
         width: 40%;
     }
     .stock-banner-large_auto {
-        min-height: 87rem;
+        /*min-height: 87rem;*/
+        min-height: 120rem;
         /*background-image: url(../img/auto-top-banner-mobile.png);*/
         align-items: flex-start;
         padding-top: 6.5rem;
-        padding-bottom: 45rem;
         /*padding-bottom: 45rem;*/
+        padding-bottom: 60rem;
         height: initial;
         /*background-size: 105%;*/
 
