@@ -95,7 +95,12 @@ function modalShow(clickElement, modalClass) {
 modalShow('footer-request-call', 'modal-callback');          /*оставить заявку*/
 modalShow('submit-application', 'modal-submit');             /*заказать звонок*/
 // modalShow('branch-btn-other', 'modal-other-filial');    /*показать другой филиал*/
+modalShow('offer-modal-link', 'modal-submit');
 
+// горячее предложение
+$('.offer-close-btn').click(function(event) {
+    $('.offer-slide').fadeOut();
+});          
 
 // маска для телефона
 $(document).ready(function () {

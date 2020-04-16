@@ -1755,7 +1755,7 @@ a:hover .right-white-icon:after {
 }
 
 .address-col-small {
-    /*flex-basis: 21.5%;*/
+    flex-basis: 21.5%;
     max-width: 21.5%;
     background-color: #fff;
     border-radius: 3.6rem;
@@ -3533,6 +3533,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .calculator-select__list {
     display: flex;
+    margin-bottom: 2.5rem;
 }
 
 .calculator-select-btn {
@@ -9315,7 +9316,6 @@ a:hover .play-btn-icon {
 /* NEWS-DETAIL PAGE END*/
 
 @media (max-width: 48em) {
-
   /* NEWS-DETAIL PAGE END */
 
   .container-inside {
@@ -9616,7 +9616,7 @@ a:hover .play-btn-icon {
     /*border-bottom: 0.2rem solid #e7e7e7;*/
   }
 
-/*  .comments__form-name:focus,
+  /* .comments__form-name:focus,
   .comments__form-text:focus {
     border-bottom: 0.2rem solid rgba(116,116,116,0.4);
   }*/
@@ -9761,10 +9761,10 @@ a:hover .play-btn-icon {
 
   /* END REVIEWS SELECT */
     
-  .aside {
+  .aside,
+  .offer-slide {
     display: none;
   }
-
 }
 
 /* ASIDE */
@@ -9773,7 +9773,7 @@ a:hover .play-btn-icon {
     position: fixed;
     /*position: sticky;*/
     /*top: 0px;*/
-    z-index: 60;
+    z-index: 40;
 
     transform: translateY(-50%);
     top: 50%;
@@ -9871,4 +9871,113 @@ a:hover .play-btn-icon {
 
 .aside-link.active:hover .aside-icon-wrap {
     box-shadow: none;
+}
+
+
+
+.offer-slide {
+    position: fixed;
+    z-index: 20;
+    top: 69%;
+    
+
+    right: 50%;
+    /*transform: translateX(94.5rem);*/
+    transform: translateX(96rem);
+
+    width: 25.4rem;
+    height: 23.8rem;
+
+    padding-top: 11.2rem;
+
+    background-image: url('../img/action2-without-shadow.png');
+    /*background-position: -30px -20px;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*box-shadow: 0px 19px 49px 0px rgba(255, 205, 99, 0.36);*/
+}
+
+@media (max-width: 1920px) {
+    .offer-slide {
+        /*right: 2%;*/
+        right: 1%;
+        transform: none;
+    }
+}
+
+.offer-slide::before,
+.offer-slide::after {
+    position: absolute;
+    content: '';
+}
+
+.offer-slide::before {
+    top: 2.6rem;
+    left: 50%;
+    transform: translateX(-44%);
+
+    width: 6.8rem;
+    height: 6.8rem;
+
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+
+.offer-close-btn {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 2.6rem;
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.offer-close-btn::before,
+.offer-close-btn::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    width: 2.6rem;
+    height: 0.2rem;
+    background-color: #5d6068;
+}
+
+.offer-close-btn::before {
+    transform: rotate(45deg);
+}
+
+.offer-close-btn::after {
+    transform: rotate(-45deg);
+}
+
+.offer-slide-icon-wrap {
+    position: absolute;
+    top: 3.8rem;
+    left: 50%;
+    transform: translateX(-44%);
+}
+
+.offer-slide-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+.offer-modal-link {
+    text-align: center;
+}
+
+.offer-slide-title {
+    display: inline-block;
+    width: 20rem;
+    /*margin-bottom: 13px;*/
+    margin-bottom: 1.8rem;
+
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.offer-slide-subtitle {
+    text-decoration: underline;
 }
