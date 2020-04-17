@@ -1,6 +1,27 @@
 $(document).ready(function () {
+        $('body').on('click','.submit-application',function () {
+        event.preventDefault();
+        var btn = $(this);
+        $('.overlay').fadeIn(200,
+            function() {
+                $('.modal-submit').addClass('active');
+                $('html, header').width($('html, header').width());
+                $('html').css('overflow', 'hidden');
+            });
+    });
+
+
+    $('body').on('click', '.delit-file', function () {
+        $(this).closest('.download-doc').remove();
+    });
+
 
     function reset () {
+        $('.reset-form').find('input').val('');
+        $('.reset-form').find('textarea').val('');
+    };
+
+    function resetForm () {
         $('.reset-form').find('input').each(function () {
             $('input').val('');
         });
@@ -54,11 +75,13 @@ $(document).ready(function () {
         }
     });
     $('.filter-dd a').click(function() {
-        let val = $(this).text();
+        let val = $(this).text(),
+            velText = $.trim(val);
+        console.log();
         $(this).closest('.filter-item').find('.filter-dd a').removeClass('active');
         $(this).addClass('active');
 
-        $(this).closest('.filter-item').find('.filter-handler').text(val);
+        $(this).closest('.filter-item').find('.filter-handler').text(velText.substring(0, 19));
         // val = $(this).data('id');
         // $(this).closest('.filter-item').find('input').val(val);
         // console.log($(this).closest('.filter-item').find('input').val());
@@ -87,8 +110,6 @@ $(document).ready(function () {
         $(this).closest('.filter-item').find('input').val(value);
     });
 
-
-
     $('#show-avtoshkola .filter-dd a').click(function() {
         let value = $(this).data('id');
         $(this).closest('.filter-item').find('input').val(value);
@@ -105,18 +126,44 @@ $(document).ready(function () {
         $('input[name="METRO-MOB"]').val(metro_id);
     });
 
-    $("#metro-value").change(function () {
-        var metro_id = $('#metro-search option[value="' + $('#metro-value').val() + '"]').data('id');
-        $('input[name="METRO"]').val(metro_id);
-        console.log($('input[name="METRO"]').val());
-    });
 
+
+  //FILTR SHOW ADDRESS
+    $("#metro-value").change(function () {
+        var metro_id = $('#metro-search option[value="' + $('#metro-value').val() + '"]').data('id'),
+            metro_text =  $('#metro-search option[value="' + $('#metro-value').val() + '"]').val(),
+            metro_vetka_id =  parseInt($('#metro-search option[value="' + $('#metro-value').val() + '"]').attr('class'));
+        console.log(metro_vetka_id);
+
+        $('input[name="METRO"]').val(metro_id);
+        $('input[name="VETKA_METRO"]').val(metro_vetka_id);
+        $('#text').text(metro_text.slice(0,19));
+        $('#text-vetka-ID a').each(function () {
+            var vetka_id = +$(this).data('id'),
+                vetka_name = $(this).text(),
+                vetka_icon = $(this).find('img').attr('src');
+
+            if (vetka_id == metro_vetka_id) {
+                $('#text-vetka').text(vetka_name);
+                $('#vetka-icon').find('img').attr("src", vetka_icon);
+            }
+        });
+
+        $('.filtr-vetka-METRO a').each(function () {
+            $idVetkaMetro = $(this).attr("class");
+            $idVetkaMetro = parseInt($idVetkaMetro);
+            if ($idVetkaMetro !== metro_vetka_id) {
+                $(this).css('display', 'none');
+            }    else {
+                $(this).css('display', 'block');
+            }
+        });
+    });
 
     $('#filtr-vetka .filtr-vetka-ID a').click(function() {
         let idVetka = $(this).data('id');
-        // console.log('ID ветки =  '+ idVetka);
-        // console.log(typeof(idVetka));
         $('#text').text('Выберите станцию');
+        $('#metro-value').val('');
         $('.filtr-vetka-METRO a').each(function () {
             $idVetkaMetro = $(this).attr("class");
 
@@ -129,7 +176,40 @@ $(document).ready(function () {
             }
         });
 
+        var scrIcon = $(this).find('img').attr('src');
+        $('#vetka-icon').find('img').attr("src", scrIcon);
+
     });
+
+    $('#filtr-vetka .filtr-vetka-METRO a').click(function() {
+        $('#metro-value').val('');
+
+    });
+
+
+    //FILTR SHOW PRICE
+    //if categoriya A,A1,М,B1,C,CE hide "korobka avtomat"
+    $('#kategoriya li').click(function () {
+        var kategoriyaID = $(this).find('a').data('id');
+        if((+kategoriyaID == 42) || (+kategoriyaID == 43) || (+kategoriyaID == 44) || (+kategoriyaID == 46) || (+kategoriyaID == 47) || (+kategoriyaID == 62) || (+kategoriyaID == 49)) {
+            $( "#korobka a" ).not( "."+ kategoriyaID ).addClass('disabled');
+        } else {
+            $( "#korobka a" ).removeClass('disabled');
+        }
+
+    //if categoriya A1,М,B1,C, CE hide "oput"
+        if((+kategoriyaID == 43) || (+kategoriyaID == 44) || (+kategoriyaID == 46) || (+kategoriyaID == 47) || (+kategoriyaID == 62) || (+kategoriyaID == 49)) {
+            $( "#oput a" ).not( "."+ kategoriyaID ).addClass('disabled');
+        } else {
+            $( "#oput a" ).removeClass('disabled');
+        }
+
+    });
+
+
+
+
+
 
 
     $('.button-show-map').click(function () {
@@ -146,9 +226,7 @@ $(document).ready(function () {
         }
     });
 
-
-
-
+    
     $('.main-slider-btn').each(function () {
         var attr = $(this).attr('href');
         if (attr == '#') {
@@ -168,6 +246,24 @@ $(document).ready(function () {
     });
 
 
+    $('.branch-btn-other').click(function () {
+        $('.overlay').fadeIn('slow');
+        $('html').toggleClass('noscroll');
+        $('.modal').slideDown(500);
+    });
+
+    $('.modal .close-btn').click(function () {
+        $('.overlay').fadeOut('slow');
+        $('.modal').slideUp(300);
+        $('html').toggleClass('noscroll');
+    });
+
+        $('.overlay').click(function() {
+        $('.modal').slideUp(300);
+        $('.overlay').fadeOut(200);
+        $('html').removeClass('noscroll');
+    });
+
 // KALKULATOR
     $('.tab-btn').click(function () {
         var valueId = $(this).attr('id');
@@ -182,7 +278,6 @@ $(document).ready(function () {
             var valueCategoriya = $('input[id='+valueFor +']').val();
         });
     }
-    // kalkulator();
 
 
 // FORMS
@@ -402,6 +497,42 @@ $(document).ready(function () {
         return false;
     });
 
+
+    // $('#vyzov-menedzhera').submit(function() {
+    //     // var formData = new FormData($('#vyzov-menedzhera')[0]);
+    //
+    //     var $that = $(this);
+    //     var data = new FormData($that.get(0));
+    //
+    //     // jQuery.each($('#file')[0].files, function(i, file) {
+    //     //     formData.append('file', file);
+    //     // });
+    //
+    //     $.ajax({
+    //         type: 'post',
+    //         url: '/ajax/form__vyzov-menedjera.php',
+    //         data: data,
+    //         dataType: 'json',
+    //         async: false,
+    //         cache: false,
+    //         contentType: false,
+    //         processData: false,
+    //         success: function (e) {
+    //             console.log(e);
+    //             console.log(true);
+    //             resetForm();
+    //             showMassege();
+    //         },
+    //
+    //         error: function (e) {
+    //             console.log(e);
+    //             console.log(false);
+    //         }
+    //     });
+    //     return false;
+    // });
+
+
     $('#pokazat-tceny').submit(function () {
         var data = $(this).serialize();
 
@@ -431,7 +562,7 @@ $(document).ready(function () {
             metro = $(this).find('input[name="METRO"]').val();
 
 
-        if ((kategoriya!='') || (metro!='')) {
+        if ((kategoriya!='') & (metro!='')) {
             var data = $(this).serialize();
 
             $.ajax({
