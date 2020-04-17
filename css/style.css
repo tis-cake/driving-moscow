@@ -2195,11 +2195,13 @@ a:hover .right-white-icon:after {
 }
 
 .more-content-btn {
+    width: 40rem;
     display: block;
     text-align: center;
     font-size: 2rem;
     font-weight: 500;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .bottom-velvet-icon {
@@ -3082,7 +3084,7 @@ a:hover>.bottom-yellow-icon:after {
 }
 
 .form-callManager .more-content-btn {
-    margin: 4rem auto 0;
+    margin: 4rem auto 2rem;
 }
 
 .callManager-advantages-wrapper {
@@ -3546,6 +3548,13 @@ input[type='range']::-webkit-slider-thumb {
     font-size: 2.2rem;
     font-weight: 500;
     margin-bottom: 2.2rem;
+}
+
+.calculator-output-field {
+    /*font-size: 2.2rem;*/
+    font-weight: 500;
+    /*margin-bottom: 2.2rem;*/
+    background-color: transparent;
 }
 
 .calculator input[type="radio"] {
@@ -8876,6 +8885,16 @@ a:hover .play-btn-icon {
   align-items: center;
 }
 
+.article .social-panel-share li {
+    position: static;
+    padding-left: 0;
+}
+
+.social-panel-share .social-panel-item::before,
+.ya-share2__list .ya-share2__item::before {
+    content: '';
+}
+
 .social-panel-list {
   display: flex;
 }
@@ -9452,6 +9471,14 @@ a:hover .play-btn-icon {
   .social-panel-list {
     display: flex;
   }
+
+  .article .social-panel-share li {
+    margin-top: 0;
+    margin-bottom: 0;
+    /*padding: 0;*/
+  }
+
+
 
   .social-panel-item {
     margin-left: 4.7rem;

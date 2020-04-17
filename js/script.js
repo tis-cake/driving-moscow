@@ -236,6 +236,24 @@ $('input[type="range"]').on("change mousemove", function() {
     }
 });
 
+// вывод значения из range калькулятора
+$(document).ready(function() {
+    let inputRange = $('#amount1');
+    let outputRange = $('#output');
+    
+    // вывод значения в поле вывода
+    inputRange.mousemove(function() {
+        // outputRange.val(inputRange.val());
+        outputRange.text(': ' + inputRange.val());
+    });
+
+    // показ введённого числа на ползунке
+    outputRange.change(function() {
+        // inputRange.val(outputRange.val());
+        inputRange.text(outputRange.val());
+    });
+})
+
 function updatePrice() {
     var price = +$('#amount1').val() * 100 +
         $('[name="format"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0) +
