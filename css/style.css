@@ -3564,8 +3564,8 @@ input[type='range']::-webkit-slider-thumb {
 
 .calculator-select-btn {
     display: block;
-    height: 6rem;
-    line-height: 6rem;
+    height: 5rem;
+    line-height: 5rem;
     border-radius: 3rem;
     background-color: #fff;
     text-align: center;
@@ -3577,7 +3577,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .calculator-select-btn.calculator-select-btn-round {
-    width: 6rem;
+    width: 5rem;
 }
 
 input[type="radio"]:checked+.calculator-select-btn {
