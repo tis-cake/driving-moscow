@@ -7429,6 +7429,10 @@ a:hover .play-btn-icon {
         z-index: 1;
     }
 
+    .footer-request-call .right-velvet-icon::before {
+        content: none;
+    }
+
     button:hover .right-velvet-icon:after,
     a:hover .right-velvet-icon:after {
         transform: translate(2.5rem, -50%);
