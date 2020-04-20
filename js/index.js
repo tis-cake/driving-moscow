@@ -1,12 +1,12 @@
 $(document).ready(function () {
-        $('body').on('click','.submit-application',function () {
-        event.preventDefault();
-        var btn = $(this);
-        $('.overlay').fadeIn(200,
-            function() {
-                $('.modal-submit').addClass('active');
-                $('html, header').width($('html, header').width());
-                $('html').css('overflow', 'hidden');
+
+    $('body').on('click','.submit-application',function () {event.preventDefault();
+    var btn = $(this);
+    $('.overlay').fadeIn(200,
+        function() {
+        $('.modal-submit').addClass('active');
+        $('html, header').width($('html, header').width());
+        $('html').css('overflow', 'hidden');
             });
     });
 
@@ -77,30 +77,24 @@ $(document).ready(function () {
     $('.filter-dd a').click(function() {
         let val = $(this).text(),
             velText = $.trim(val);
-        console.log();
+
         $(this).closest('.filter-item').find('.filter-dd a').removeClass('active');
         $(this).addClass('active');
-
         $(this).closest('.filter-item').find('.filter-handler').text(velText.substring(0, 19));
-        // val = $(this).data('id');
-        // $(this).closest('.filter-item').find('input').val(val);
-        // console.log($(this).closest('.filter-item').find('input').val());
-
         let value = $(this).text();
         $(this).closest('.filter-item').find('input').val(value);
-
-        // let imgSrc = $(this).find('img').attr("src"); // путь к иконке
-        // let handlerEl = $(this).closest('.filter-item').find('.filter-handler'); // элемент, куда записывается текст
-        // let imgTemplate = '<i class="metro-icon-shadow-large metro-icon-absolute"><img src="' + imgSrc +'"></i>';  // шаблон с иконкой
-        // console.log(imgTemplate);
-        // handlerEl.html(imgTemplate);
     });
     $('body').on('click', function(e) {
         if ($(e.target).closest('.filter-handler').length === 0) {
             $('.filter-dd').slideUp(200);
             $('.filter-handler').removeClass('active');
-            // updatePrice2();
         }
+    });
+
+    $('#calculatorMOB .filter-dd a').click(function () {
+        var dataId = $(this).data('id');
+        $(this).closest('.filter-item').find('input').val(dataId);
+
     });
 
 
@@ -207,11 +201,6 @@ $(document).ready(function () {
     });
 
 
-
-
-
-
-
     $('.button-show-map').click(function () {
         if($('div').is('#myMap')) {
             $('#tab-1').css('display', 'none');
@@ -249,7 +238,13 @@ $(document).ready(function () {
     $('.branch-btn-other').click(function () {
         $('.overlay').fadeIn('slow');
         $('html').toggleClass('noscroll');
-        $('.modal').slideDown(500);
+        $('.modal-car').slideDown(500);
+    });
+
+    $('.branch-btn-other-moto').click(function () {
+        $('.overlay').fadeIn('slow');
+        $('html').toggleClass('noscroll');
+        $('.modal-moto').slideDown(500);
     });
 
     $('.modal .close-btn').click(function () {
@@ -263,6 +258,31 @@ $(document).ready(function () {
         $('.overlay').fadeOut(200);
         $('html').removeClass('noscroll');
     });
+
+
+    $().fancybox({
+        selector : '.video-conteiner a:visible',
+        loop: true,
+        animationEffect: "zoom-in-out",
+        buttons : [
+            'fullScreen',
+            'close'
+        ],
+        titleShow: true
+    });
+
+    $().fancybox({
+        selector : '.docs-swiper a:visible',
+        loop: true,
+        animationEffect: "zoom-in-out",
+        buttons : [
+            'fullScreen',
+            'close'
+        ]
+    });
+
+
+
 
 // KALKULATOR
     $('.tab-btn').click(function () {
@@ -652,7 +672,7 @@ $(document).ready(function () {
             success: function (e) {
                 console.log(e);
                 console.log(true);
-                reset();
+                resetForm();
                 showMassegeAfterComment();
             },
             error: function (e) {
@@ -662,5 +682,4 @@ $(document).ready(function () {
         });
         return false;
     });
-
 })

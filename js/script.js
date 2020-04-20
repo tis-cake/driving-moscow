@@ -92,15 +92,15 @@ function modalShow(clickElement, modalClass) {
         $('html').removeAttr('style');
     });
 };
-modalShow('footer-request-call', 'modal-callback');          /*оставить заявку*/
-modalShow('submit-application', 'modal-submit');             /*заказать звонок*/
-// modalShow('branch-btn-other', 'modal-other-filial');    /*показать другой филиал*/
-modalShow('offer-modal-link', 'modal-submit');
+modalShow('footer-request-call', 'modal-callback');          /* оставить заявку */
+modalShow('submit-application', 'modal-submit');             /* заказать звонок */
+// modalShow('branch-btn-other', 'modal-other-filial');    /* показать другой филиал */
+modalShow('offer-modal-link', 'modal-submit');               /* горячее предложение */
 
 // горячее предложение
 $('.offer-close-btn').click(function(event) {
     $('.offer-slide').fadeOut();
-});          
+}); 
 
 // маска для телефона
 $(document).ready(function () {
@@ -222,7 +222,7 @@ var swiper = new Swiper('.docs-swiper', {
 /*калькулятор сверху смена ползунка*/
 $('input[type="range"]').on("change mousemove", function() {
     var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
-
+    console.log(val);
     $(this).css('background-image',
         '-webkit-gradient(linear, left top, right top, ' +
         'color-stop(' + val + ', #9f41ff), ' +
@@ -254,24 +254,24 @@ $(document).ready(function() {
     });
 })
 
-function updatePrice() {
-    var price = +$('#amount1').val() * 100 +
-        $('[name="format"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0) +
-        $('[name="category"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0) +
-        $('[name="transmission"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0);
+// function updatePrice() {
+//     var price = +$('#amount1').val() * 100 +
+//         $('[name="format"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0) +
+//         $('[name="category"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0) +
+//         $('[name="transmission"]:checked').toArray().reduce((sum, n) => sum + +$(n).val(), 0);
 
     // $( "#amount3" ).val("$" + price);
 
-    $("#value__result").html(price);
-    var oldPrice = +price * 1.7;
-    $("#value__result-old").html(oldPrice);
-}
-$('[name="format"]').change(updatePrice);
-$('[name="category"]').change(updatePrice);
-$('[name="transmission"]').change(updatePrice);
-$('#amount1').change(updatePrice);
+//     $("#value__result").html(price);
+//     var oldPrice = +price * 1.7;
+//     $("#value__result-old").html(oldPrice);
+// }
+// $('[name="format"]').change(updatePrice);
+// $('[name="category"]').change(updatePrice);
+// $('[name="transmission"]').change(updatePrice);
+// $('#amount1').change(updatePrice);
 
-updatePrice();
+// updatePrice();
 
 
 
@@ -289,9 +289,9 @@ function updatePrice2() {
     $("#value__result-old-mob").html(oldPrice);
     $("#value__result-mob").html(price);
 }
-$('#amount2').change(updatePrice2);
+// $('#amount2').change(updatePrice2);
 
-updatePrice2();
+// updatePrice2();
 
 /*слайдер на странице детской мотошколы*/
 var swiper = new Swiper('.moto-swiper', {
@@ -614,22 +614,22 @@ $(document).ready(function () {
 });
 
 // label с файлом
-  // let inputFile = $('.vacancies-file');
-  // let labelFile = $('.more-content-btn');
-  // let labelTextField = labelFile.find($('.input__file-button-text'));
-  // let labelVal = labelFile.find($('.input__file-button-text')).text();
+//   let inputFile = $('.vacancies-file');
+//   let labelFile = $('.more-content-btn');
+//   let labelTextField = labelFile.find($('.input__file-button-text'));
+//   let labelVal = labelFile.find($('.input__file-button-text')).text();
 
-  // inputFile.on('change', function (evt) {
-  //   let countFiles = '';
-  //   if (this.files && this.files.length >= 1) {
-  //     countFiles = this.files.length;
-  //   }
-    // if (countFiles) {
-    //   labelTextField.text('Выбрано файлов: ' + countFiles);
-    // }
-    // else {
-    //   labelTextField.text(labelVal);
-    // }
+//   inputFile.on('change', function (evt) {
+//     let countFiles = '';
+//     if (this.files && this.files.length >= 1) {
+//       countFiles = this.files.length;
+//     }
+//     if (countFiles) {
+//       labelTextField.text('Выбрано файлов: ' + countFiles);
+//     }
+//     else {
+//       labelTextField.text(labelVal);
+//     }
 
 //     countFiles ? labelTextField.text('Выбрано файлов: ' + countFiles) : labelTextField.text(labelVal);
 // });

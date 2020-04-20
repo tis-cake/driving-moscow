@@ -3489,8 +3489,9 @@ input[type="range"]::-ms-fill-upper {
     background-image: -webkit-gradient(linear,
         left top,
         right top,
-        color-stop(0.65, #9f41ff),
-        color-stop(0.65, #cdcfdc));
+        color-stop(0.30, #9f41ff),
+        color-stop(0.30, #cdcfdc)
+        );
 }
 
 input[type='range']::-webkit-slider-thumb {
