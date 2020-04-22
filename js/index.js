@@ -235,17 +235,17 @@ $(document).ready(function () {
     });
 
 
-    $('.branch-btn-other').click(function () {
-        $('.overlay').fadeIn('slow');
-        $('html').toggleClass('noscroll');
-        $('.modal-car').slideDown(500);
-    });
+    // $('.branch-btn-other').click(function () {
+    //     $('.overlay').fadeIn('slow');
+    //     $('html').toggleClass('noscroll');
+    //     $('.modal-car').slideDown(500);
+    // });
 
-    $('.branch-btn-other-moto').click(function () {
-        $('.overlay').fadeIn('slow');
-        $('html').toggleClass('noscroll');
-        $('.modal-moto').slideDown(500);
-    });
+    // $('.branch-btn-other-moto').click(function () {
+    //     $('.overlay').fadeIn('slow');
+    //     $('html').toggleClass('noscroll');
+    //     $('.modal-moto').slideDown(500);
+    // });
 
     $('.modal .close-btn').click(function () {
         $('.overlay').fadeOut('slow');

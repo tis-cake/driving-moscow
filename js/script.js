@@ -94,8 +94,22 @@ function modalShow(clickElement, modalClass) {
 };
 modalShow('footer-request-call', 'modal-callback');          /* оставить заявку */
 modalShow('submit-application', 'modal-submit');             /* заказать звонок */
-// modalShow('branch-btn-other', 'modal-other-filial');    /* показать другой филиал */
 modalShow('offer-modal-link', 'modal-submit');               /* горячее предложение */
+
+modalShow('branch-btn-other', 'modal-car');                  /* другие филиалы, авто */
+modalShow('branch-btn-other-moto', 'modal-moto');            /* другие филиалы, мото */
+
+// $('.header-lower-right-mail').click(function () {
+//     $('.overlay').fadeIn('slow');
+//     $('html').toggleClass('noscroll');
+//     $('.modal-other-f').slideDown(500);
+// });
+
+// $('.branch-btn-other-moto').click(function () {
+//     $('.overlay').fadeIn('slow');
+//     $('html').toggleClass('noscroll');
+//     $('.modal-moto').slideDown(500);
+// });
 
 // горячее предложение
 $('.offer-close-btn').click(function(event) {
@@ -217,7 +231,10 @@ var swiper = new Swiper('.docs-swiper', {
       }
 });
 
-
+$('.calculator-item__range').on("change mousemove", function() {
+    var step = $(this).attr('step');
+    console.log(step);
+});
 
 /*калькулятор сверху смена ползунка*/
 $('input[type="range"]').on("change mousemove", function() {
