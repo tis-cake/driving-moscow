@@ -211,12 +211,17 @@ a.disabled {
     background-position: center 1.5rem;
 }
 
-.header-nav-item:hover::before {
+.header-nav-item-link {
+    position: relative;
+}
+
+.header-nav-item-link:hover::before {
     content: '';
     position: absolute;
-    left: 1.8rem;
-    bottom: 1.4rem;
-    width: calc(100% - 3.6rem);
+    left: 0;
+    bottom: -0.9rem;
+    /*width: calc(100% - 3.6rem);*/
+    width: 100%;
     height: 2px;
     background-color: #9f41ff;
 }
@@ -258,6 +263,9 @@ a.disabled {
 }
 
 @media (max-width: 48em) {
+    .ymaps-2-1-76-balloon__layout {
+        width: 100%;
+    }
     #perviy_platezh,
     #value__result-old-desc,
     #result_price {
@@ -297,6 +305,11 @@ a.disabled {
     .webinar-wrapper.add .helpful-col-1 {
         width: 100%;
     }
+    .helpful.video-conteiner .helpful-col-1 {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
     .desk {
         display: none;
     }
