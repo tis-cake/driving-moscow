@@ -1,3 +1,11 @@
+.form-vacancies-checkbox.active:before {
+    border: 1px solid red;
+}
+.offer-slide {
+    display: flex;
+    justify-content: center;
+    padding-top: 6.2rem;
+}
 .video-conteiner .swiper-slide-link {
     display: block!important;
 }
@@ -215,6 +223,11 @@ a.disabled {
     position: relative;
 }
 
+.header-nav-item.active::after {
+  content: none;
+}
+
+.header-nav-item.active .header-nav-item-link::before,
 .header-nav-item-link:hover::before {
     content: '';
     position: absolute;
@@ -262,7 +275,33 @@ a.disabled {
     justify-content: center!important;
 }
 
+.main-slider {
+  overflow-x: hidden;
+}
+
+.calculator-value__result-old {
+    color: #6b6b6f;
+}
+
+.calculator-value__result-old::before {
+    background-color: #6b6b6f;
+}
+
+.calculator-value__result-new span {
+    font-weight: 700;
+}
+
+.open-form-arrow {
+    width: 5rem;
+    height: 3.3rem;
+    background-image: url('../img/svg/right-arrow-purple.svg');
+    background-size: cover;
+}
+
 @media (max-width: 48em) {
+    .offer-slide {
+        display: none;
+    }
     .modal .modal-other-filial__list {
         flex-direction: row;
         height: 28rem;
