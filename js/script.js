@@ -99,18 +99,6 @@ modalShow('offer-modal-link', 'modal-submit');               /* горячее �
 modalShow('branch-btn-other', 'modal-car');                  /* другие филиалы, авто */
 modalShow('branch-btn-other-moto', 'modal-moto');            /* другие филиалы, мото */
 
-// $('.header-lower-right-mail').click(function () {
-//     $('.overlay').fadeIn('slow');
-//     $('html').toggleClass('noscroll');
-//     $('.modal-other-f').slideDown(500);
-// });
-
-// $('.branch-btn-other-moto').click(function () {
-//     $('.overlay').fadeIn('slow');
-//     $('html').toggleClass('noscroll');
-//     $('.modal-moto').slideDown(500);
-// });
-
 // горячее предложение
 $('.offer-close-btn').click(function(event) {
     $('.offer-slide').fadeOut();
@@ -165,9 +153,36 @@ var swiper = new Swiper('.main-swiper', {
 //     }
 // });
 
-$('.reviews-tab-select').click(function() {
-    $('.reviews-tab-select-form').toggleClass('active');
+// мобильные отзывы
+$(document).ready(function() {
+    var width = $(window).width();
+    var toggleList = $(".reviews-tab-select");
+    if (width <= 768) {
+        // $('.reviews-tabs').slideUp();
+        $('.reviews-tab-select').click(function(evt) {
+            $(this).toggleClass('active');
+            $('.reviews-tabs').slideToggle();
+            var val = $(this).text();
+            $('.revews-tab-link').click(function() {
+                val = $(this).text();
+                $('.reviews-tab-select').text(val);
+                $('.reviews-tab-select').removeClass('active');
+                $('.reviews-tabs').slideUp();
+            })
+
+            $('body').on('click', function(e) {
+                if ($(e.target).closest('.reviews-tab-select').length === 0) {
+                    $('.reviews-tab-select').removeClass('active');
+                    $('.reviews-tabs').slideUp();
+                }
+            });
+        });
+    }
 });
+
+// $('.reviews-tab-select').click(function() {
+//     $('.reviews-tab-select-form').toggleClass('active');
+// });
 
 $('.sub-list-toggle').click(function() {
     $('.mobile-header-nav-list.sub-list').slideToggle();
@@ -231,37 +246,19 @@ var swiper = new Swiper('.docs-swiper', {
       }
 });
 
-$('.calculator-item__range').on("change mousemove", function() {
-    var step = $(this).attr('step');
-    console.log(step);
-});
 
-/*калькулятор сверху смена ползунка*/
-$('input[type="range"]').on("change mousemove", function() {
-    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
-    console.log(val);
-    $(this).css('background-image',
-        '-webkit-gradient(linear, left top, right top, ' +
-        'color-stop(' + val + ', #9f41ff), ' +
-        'color-stop(' + val + ', #cdcfdc)' +
-        ')'
-    );
-    if ((val * 100) < 16.666) {
-        $('#rangeValue-min').addClass('active');
-    } else {
-        $('#rangeValue-min').removeClass('active');
-    }
-});
+
+
 
 // вывод значения из range калькулятора
 $(document).ready(function() {
     let inputRange = $('#amount1');
     let outputRange = $('#output');
-    
+
     // вывод значения в поле вывода
     inputRange.mousemove(function() {
         // outputRange.val(inputRange.val());
-        outputRange.text(': ' + inputRange.val());
+        outputRange.text(inputRange.val());
     });
 
     // показ введённого числа на ползунке
@@ -366,6 +363,17 @@ $(document).ready(function(){
 
         $(tab).fadeIn(400);
     });
+
+    // $('.reviews-tab-select').click(function () {
+    //     var optionValue = $(this).val();
+    //     console.log(optionValue);
+    //     $('.reviews-tabs-blocks').not(optionValue).css({'display':'none'});
+    //     $('.reviews-tabs-blocks').not(optionValue).removeClass('active');
+    //     $(optionValue).addClass('active');
+    //     $('.show-more').removeClass('active');
+    //     $(optionValue + '-btn').addClass('active');
+    //     $(optionValue).fadeIn(400);
+    // });
 });
 
 /*слайдер на странице филиалы, верхний*/
@@ -546,6 +554,8 @@ $(document).ready(function () {
   // отмечаем элемент при попадании в поле зрения
   $(window).on('scroll', function () {
 
+    mainEl.removeClass('hidden-top hidden-bottom');
+
     // mainEl = $('.aside-list');
 
     let scrollRelativeEl = $('section'); // сравниваем относительно этих элементов (section)
@@ -573,37 +583,32 @@ $(document).ready(function () {
   });
 
   // скрываем на футере
-  let target = $('footer');
-  let targetPos = target.offset().top;         // фиксированное расстояние до элемента
-  let windowHeight = $(window).height();
-  let scrollToElem = targetPos - windowHeight; // расстояние до элемента учитывая скроллинг
+  // let target = $('footer');
+  // let targetPos = target.offset().top;
+  // let windowHeight = $(window).height();
+  // let scrollToElem = targetPos - windowHeight;
 
-  $(window).scroll(function(){
-    let winScrollTop = $(this).scrollTop();    // на сколько px проскроллили
+  // $(window).scroll(function(){
+  //   let winScrollTop = $(this).scrollTop();
 
-    // console.log('проскроллили на ' + winScrollTop + ' px');
-    // console.log('до элемента всего ' + scrollToElem + ' px');
-    // console.log('до элемента осталось ' + (winScrollTop - scrollToElem) + ' px');
-
-    if((winScrollTop - scrollToElem) > 0 ) {
-      // console.log(mainEl)
-      mainEl.addClass('hidden-bottom');
-    } else {
-      mainEl.removeClass('hidden-bottom');
-    }
-  });
+  //   if((winScrollTop - scrollToElem) > 0 ) {
+  //     mainEl.addClass('hidden-bottom');
+  //   } else {
+  //     mainEl.removeClass('hidden-bottom');
+  //   }
+  // });
 
   // скрываем на первом элементе после хедера
-  let firstEl = ($('main section:first'));        // первый элемент
-  let firstElHeight = firstEl.outerHeight(true);  // высота первого элемента
+  // let firstEl = ($('main section:first'));        // первый элемент
+  // let firstElHeight = firstEl.outerHeight(true);  // высота первого элемента
 
-  $(window).scroll(function () {
-    if ($(window).scrollTop() < firstElHeight / 2) {
-      mainEl.addClass('hidden-top');
-    } else if ($(window).scrollTop() >= firstElHeight  / 2) {
-      mainEl.removeClass('hidden-top');
-    }
-  });
+  // $(window).scroll(function () {
+  //   if ($(window).scrollTop() < firstElHeight / 2) {
+  //     mainEl.addClass('hidden-top');
+  //   } else if ($(window).scrollTop() >= firstElHeight  / 2) {
+  //     mainEl.removeClass('hidden-top');
+  //   }
+  // });
 });
 
 // появление нижнего блока меню

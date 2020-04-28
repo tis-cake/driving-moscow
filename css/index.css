@@ -298,7 +298,90 @@ a.disabled {
     background-size: cover;
 }
 
+.reviews-tab-select {
+    display: none;
+    position: relative;
+}
+
 @media (max-width: 48em) {
+    /* reviews start */
+    .reviews-tab-select {
+        display: block;
+    }
+
+    .reviews-tab-select {
+        display: block;
+    }
+
+    .reviews-tabs {
+        top: 33rem;
+        z-index: 10;
+        position: absolute;
+        /*display: block;*/
+        display: none;
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        border-radius: 3.6rem;
+        overflow: hidden;
+    }
+
+    .reviews-tab {
+        max-width: none;
+    }
+
+    .reviews-tabs-block {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 13rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 7rem;
+        border-radius: 3.6rem;
+    }
+
+    .revews-tab-link {
+        /*display: none;*/
+        text-align: left;
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 1.2;
+        padding: 2.5rem;
+        border-radius: 0;
+        border: 2px solid transparent;
+        background-color: #fff;
+        transition: 0.2s;
+    }
+
+    .revews-tab-link.active {
+        display: block;
+        border-color: transparent;
+    }
+
+    .reviews-tab-select::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 4.8rem;
+        width: 2.6rem;
+        height: 1.7rem;
+        top: 50%;
+        transform: translateY(-0.5rem);
+        background-image: url(../img/select-arrow.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: 0.3s;
+    }
+
+    .reviews-tab-select.active::after {
+        transform: translateY(-0.5rem) rotate(180deg);
+    }
+
+    /* reviews end */
+
     .offer-slide {
         display: none;
     }

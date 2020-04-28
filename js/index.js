@@ -260,26 +260,26 @@ $(document).ready(function () {
     });
 
 
-    $().fancybox({
-        selector : '.video-conteiner a:visible',
-        loop: true,
-        animationEffect: "zoom-in-out",
-        buttons : [
-            'fullScreen',
-            'close'
-        ],
-        titleShow: true
-    });
+    // $().fancybox({
+    //     selector : '.video-conteiner a:visible',
+    //     loop: true,
+    //     animationEffect: "zoom-in-out",
+    //     buttons : [
+    //         'fullScreen',
+    //         'close'
+    //     ],
+    //     titleShow: true
+    // });
 
-    $().fancybox({
-        selector : '.docs-swiper a:visible',
-        loop: true,
-        animationEffect: "zoom-in-out",
-        buttons : [
-            'fullScreen',
-            'close'
-        ]
-    });
+    // $().fancybox({
+    //     selector : '.docs-swiper a:visible',
+    //     loop: true,
+    //     animationEffect: "zoom-in-out",
+    //     buttons : [
+    //         'fullScreen',
+    //         'close'
+    //     ]
+    // });
 
 
 
