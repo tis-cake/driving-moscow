@@ -82,7 +82,7 @@ function modalShow(clickElement, modalClass) {
         $('.overlay').fadeIn(200,
             function() {
                 $('.' + modalClass).addClass('active');
-                $('html, header').width($('html, header').width());
+                // $('html, header').width($('html, header').width());
                 $('html').css('overflow', 'hidden');
             });
     });
@@ -95,6 +95,7 @@ function modalShow(clickElement, modalClass) {
 modalShow('footer-request-call', 'modal-callback');          /* оставить заявку */
 modalShow('submit-application', 'modal-submit');             /* заказать звонок */
 modalShow('offer-modal-link', 'modal-submit');               /* горячее предложение */
+modalShow('aside-link-block__link-modal', 'modal-callback'); /* ссылка внизу страницы на телефоне */
 
 modalShow('branch-btn-other', 'modal-car');                  /* другие филиалы, авто */
 modalShow('branch-btn-other-moto', 'modal-moto');            /* другие филиалы, мото */
